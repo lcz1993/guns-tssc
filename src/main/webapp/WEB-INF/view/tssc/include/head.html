@@ -1,0 +1,54 @@
+<header class="masthead">
+    <div class="masthead-inner">
+        <!-- 只有首頁 logo class加 shy，其他頁面都不用 -->
+        <div class="logo shy">
+            <a href="${ctxPath}/tssc/"><img src="${ctxPath}/static/reception/img/logo/logo.png" alt="腾盛时创" /></a>
+        </div>
+        <div id="navBar" class="navbar container">
+            <!--<div class="dash"></div>-->
+            <ul class="menu">
+                <!-- 目前單元 class .mainitem 加 "on" -->
+                <li id="about" class="mainitem"> <a class="mainbtn" data-ga-event="nav-about" href="${ctxPath}/tssc/about"><span class="txt">我们</span><i class="icn icn-angle-right"></i></a>
+                    <ul class="submenu">
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-about-group" href="${ctxPath}/tssc/about"><span class="txt">简介</span><i class="icn icn-angle-right"></i></a></li>
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-about-leader"  href="${ctxPath}/tssc/about#/about-group"><span class="txt">愿景</span><i class="icn icn-angle-right"></i></a></li>
+                        <li class="subitem"><a class="subbtn " data-ga-event="nav-about-worldwide"  href="${ctxPath}/tssc/about#/about-leader"><span class="txt">历史</span><i class="icn icn-angle-right"></i></a></li>
+                    </ul>
+                </li>
+                <li id="works" class="mainitem"> <a class="mainbtn" data-ga-event="nav-works" href="${ctxPath}/tssc/works"><span class="txt">产品</span><i class="icn icn-angle-right"></i></a> </li>
+                <li id="news" class="mainitem"> <a class="mainbtn" href="javascript:;"  href="${ctxPath}/tssc/media"><span class="txt">最新消息</span><i class="icn icn-angle-right"></i></a>
+                    <ul class="submenu">
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-media"  href="${ctxPath}/tssc/media"><span class="txt">动态</span><i class="icn icn-angle-right"></i></a></li>
+                        <li class="subitem"><a class="subbtn disable" data-ga-event="nav-events" href="#"><span class="txt">活动</span><i class="icn icn-angle-right"></i></a></li>
+                    </ul>
+                </li>
+                <li id="viewpoints" class="mainitem"> <a class="mainbtn" data-ga-event="nav-viewpoints" href="${ctxPath}/tssc/viewpoints"><span class="txt">观点</span><i class="icn icn-angle-right"></i></a> </li>
+                <li id="contact" class="mainitem"> <a class="mainbtn" data-ga-event="nav-inquiry" href="${ctxPath}/tssc/contact"><span class="txt">服务预约</span><i class="icn icn-angle-right"></i></a> </li>
+                <li id="career" class="mainitem"> <a class="mainbtn" data-ga-event="nav-career" href="${ctxPath}/tssc/careerList"><span class="txt">加入我们</span><i class="icn icn-angle-right"></i></a>
+                    <ul class="submenu">
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-online-career" href="${ctxPath}/tssc/career-list"><span class="txt">生活</span><i class="icn icn-angle-right"></i></a></li>
+                        <!--<li class="subitem"><a class="subbtn" data-ga-event="nav-career-internship" href="career.aspx#/career-internship"><span class="txt">实习</span><i class="icn icn-angle-right"></i></a></li>-->
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-career-training" href="${ctxPath}/tssc/career#/career-training"><span class="txt">成长</span><i class="icn icn-angle-right"></i></a></li>
+                        <li class="subitem"><a class="subbtn" data-ga-event="nav-career-benefits" href="${ctxPath}/tssc/career#/career-benefits"><span class="txt">福利</span><i class="icn icn-angle-right"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu links">
+                <li class="mainitem"> <a class="mainbtn" >隐私声明</a> </li>
+                <li class="mainitem"> <a class="mainbtn" >Chinese</a> </li>
+            </ul>
+            <!--页面右侧定位开始-->
+            <div class="weixin" onmouseover="this.className = 'weixin on';" onmouseout="this.className = 'weixin';" style="float: right">
+                <a href="javascript:;"></a>
+                <div class="weixin_nr">
+                    <div class="arrow"></div>
+                    <img src="${ctxPath}/static/reception/img/weixin.jpg" width="100" height="100" />
+                    关注官方微信
+                </div>
+            </div>
+            <!--页面右侧定位结束-->
+        </div>
+        <!--/.navbar-->
+    </div>
+    <!--/.masthead-inner-->
+</header>

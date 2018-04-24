@@ -1,0 +1,164 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>最新消息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+
+
+    <!--[if lte IE 8]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css">
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css">
+</head>
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+<!--顶部导航开始-->
+@include("/tssc/include/head.html"){}
+<!--顶部导航结束-->
+
+<main class="mastbody">
+    <div class="mastbody-inner">
+
+        <div class="effect-holder" data-effect="news"></div>
+
+
+        <!--************************
+                新聞稿/列表
+            ************************-->
+
+        <!--
+            頁面串套設定：
+
+            data-articleurl 	填入：本單元內頁含有{id}組成格式的網址，js將處理成內頁網址  e.g  /events.html?id={id}  or  /news/?aid={id}  or  /myname/?x={id}
+            data-listurl 		填入：本單元列表第一頁的網址 (因若user直接造訪內頁，則回列表時回第一頁)   e.g  /newslist.html?page=1  or /events/page/1
+            data-startpath 		勿更改！
+
+            依"頁次"輸出本列表頁內容，每頁10筆做分頁
+
+            <a> data-articleid			填入：ID值，並且 href 填入內頁實體網址 (js會實際去ajax)
+            <a> data-appendlist 的 href	填入：下一頁次的列表網址		e.g 現在第2頁，則填入第3頁網址
+
+            若在資料末頁，則把<a data-appendlist>按鈕隱藏
+        -->
+        <div data-articleurl="media-detailed.html?Serno={id}" data-listurl="media.html?page=1" data-startpath="#/article"></div>
+
+        <!-- article列表 (網址: #/article)-->
+
+        <div data-section="article" class="section">
+            <section data-mainpage="list" class="mainpage">
+                <div id="ajaxlist" class="page-body article-list">
+                    <div class="row-main">
+                        <div class="header">
+                            <h1 class="maintitle">新聞稿</h1>
+                        </div>
+                        <div class="content" data-scrollpane="" data-autosize="">
+                            <div class="content-inner">
+                                <ul class="newslist">
+
+                                    <li class="item">
+                                        <a data-articleid="116" href="media-detailed.html?Serno=116">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">面對數位轉型大趨勢，全球奧美數位行銷執行長費思桐公開演說 強調科技與人類共存重要</h4>
+                                                <time class="time">2018/03/09</time>
+                                            </div>
+                                            <p class="descr">台灣奧美舉辦數位轉型趨勢論壇，全球奧美數位行銷執行長費思桐（Brian Feth<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="115" href="media-detailed.html?Serno=115">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">台灣奧美邁向新樂章  調整組織架構 以客戶為中心 整合集團資源 讓品牌更有意義</h4>
+                                                <time class="time">2018/01/22</time>
+                                            </div>
+                                            <p class="descr">隨著數位社群媒體的發展，品牌傳播環境已邁向即時化、碎片化與複雜化，為此台灣奧美於<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="88" href="media-detailed.html?Serno=88">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">台灣奧美集團發布重要人事升遷資深廣告人呂豐餘升任奧美廣告董事總經理一職</h4>
+                                                <time class="time">2017/03/07</time>
+                                            </div>
+                                            <p class="descr">(3月7日台北訊) 台灣奧美集團今日宣布，自3月21日起奧美廣告呂豐餘總經理升任董事總經理一職。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="35" href="media-detailed.html?Serno=35">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">參與天下雜誌『SHE時代論壇』  莊淑芬倡議女性領導人
+                                                    找到屬於企業與個人的PPAP  讓品牌大有為  產生影響力</h4>
+                                                <time class="time">2016/11/01</time>
+                                            </div>
+                                            <p class="descr">2016年11月1日，台北訊 —— 奧美大中華區副董事長暨WPP集團台灣區董事長莊淑芬(Shenan Chuang)於10月27日應天下雜誌『SHE時代論壇III』邀請，以｢午後PPAP──品牌如何大有為?｣發表專題演講。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="34" href="media-detailed.html?Serno=34">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">重視台灣市場  WPP集團任命莊淑芬出任台灣區董事長
+                                                    著眼橫向協作  匯集並聚焦於人才﹅客戶﹅大數據及內容</h4>
+                                                <time class="time">2016/07/13</time>
+                                            </div>
+                                            <p class="descr">2016年7月13日，台北訊 —— WPP集團宣布，由奧美集團大中華區副董事長莊淑芬(Shenan Chuang)出任該集團新設置之“WPP集團台灣區董事長”一職，同時繼續身兼原有職務。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="33" href="media-detailed.html?Serno=33">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">2016年伊始 台灣奧美集團發布重大人事升遷</h4>
+                                                <time class="time">2016/02/25</time>
+                                            </div>
+                                            <p class="descr">台灣奧美集團宣布，自今(2016)年3月1日起奧美中國東南區集團董事總經理李景宏(Daniel Lee)晉升為台灣奧美集團執行長，同時繼續身兼原有職務。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div><!--/.content-inner-->
+                        </div><!--/.content-->
+
+                    </div><!--/.row-main-->
+                </div><!--/.page-body-->
+            </section>
+
+            <section data-mainpage="detail" class="mainpage">
+                <div class="redstripe"></div>
+            </section>
+        </div><!--/[data-section]-->
+
+
+    </div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+<!--顶部导航开始-->
+@include("/tssc/include/foot.html"){}
+<!--顶部导航结束-->
+
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js"></script></body></html>

@@ -1,0 +1,582 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>产品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css?v=2" />
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css">
+</head>
+
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+<!--顶部导航开始-->
+@include("/tssc/include/head.html"){}
+<!--顶部导航结束-->
+
+
+<main class="mastbody">
+    <div class="mastbody-inner">
+
+        <div class="effect-holder" data-effect="works"></div>
+
+
+        <!--************************
+                作品／列表
+            ************************-->
+
+        <!--
+            頁面串套設定：
+
+            data-articleurl 	填入：作品內頁含有{id}組成格式的網址，js將處理成作品內頁網址  e.g  /works.html?id={id}
+            data-listurl 		填入：最新一年列表的網址  e.g  /works.html?year=2017&tag=all&company=all
+            data-startpath 		勿更改！
+
+            依"搜尋條件"輸出本列表頁內容，不必分頁，一次全輸出
+
+            - 下拉選年份，預設為最新一年 (e.g 2017)，並沒有"全部年份"這個選項，為了避免一次載入全部資料！
+            - 畫面上顯示的分頁(每頁12筆)是js做出來的分頁的，後端不必做分頁功能，但HTML需每12筆包為一組<ul><li>。
+
+            <a> data-articleid			填入：ID值，並且 href 填入內頁實體網址 (js會實際去ajax)
+        -->
+
+        <div data-articleurl="works-detailed.html?Serno={id}" data-listurl="works.html?year=2017&amp;tag=all&amp;company=all" data-startpath="#/article"></div>
+
+        <!-- article列表 (網址: #/article)-->
+
+        <div id="works" data-section="article" class="section">
+            <section data-mainpage="list" class="mainpage">
+                <div id="ajaxlist" class="page-body article-list">
+                    <div class="row-main">
+                        <form method="post" action="./works.html" id="worksform">
+                            <div class="aspNetHidden">
+                                <input type="hidden" name="actionStamp" id="actionStamp" value="2018%2f4%2f8+%e4%b8%8a%e5%8d%88+11%3a32%3a37">
+                                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE3NzQwMzQ1MzYPZBYCAgIPZBYGAgEPEA8WBh4NRGF0YVRleHRGaWVsZAUJY2FzZV90eXBlHg5EYXRhVmFsdWVGaWVsZAUFU2Vybm8eC18hRGF0YUJvdW5kZ2QQFQsS5omA5pyJ5qGI5L6L6aGe5YilD+WTgeeJjOWSjOWJteaEjwzlhaflrrnooYzpircG5YWs6ZecDOaVuOaTmuWIhuaekAznpL7nvqTooYzpircP5raI6LK76ICF5LqS5YuVBua0u+WLlRLmlbjkvY3lqpLpq5TooYzpircY5raI6LK76ICF5Y+K6Zu25ZSu5o6o5bujDOaVuOS9jeihjOmKtxULAAExATIBMwE0ATUBNgE3ATgBOQIxMBQrAwtnZ2dnZ2dnZ2dnZ2RkAgMPEA8WBh8ABQR0ZXh0HwEFBmFubnVhbB8CZ2QQFQUM5omA5pyJ5bm05Lu9BDIwMTYEMjAxNQQyMDE0BDIwMTMVBQAEMjAxNgQyMDE1BDIwMTQEMjAxMxQrAwVnZ2dnZ2RkAgUPEA8WBh8ABQdjb21wYW55HwEFBVNlcm5vHwJnZBAVCAzmiYDmnInlnJjpmooe5aWn576O5pW05ZCI6KGM6Yq35YKz5pKt6ZuG5ZyYDOWlp+e+juW7o+WRihLlpafnvo7kupLli5XooYzpircS5aWn576O5YWs5YWx6Zec5L+CEuS4lue0gOWlp+e+juWFrOmXnBLmiJHmmK/lpKfooZvlu6PlkYoM57SF5Z2K5Ym15oSPFQgAAjEyATEBMgE1ATYCMTABORQrAwhnZ2dnZ2dnZ2RkZCahRd+HDMUn9g30ddk88WOUH85zlKbGnviZFaSK+3W1">
+                            </div>
+
+                            <div class="aspNetHidden">
+
+                                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EBE9D16C">
+                                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABnP0ZA8kT1MH+JE3U8iZstZIMJPpxkAztS7ODIRAs4RiMIL08P8rnTsbg9wB0UGhkN1peFUelj+EhrU53T13i+uUTFmuj7ZtnEZtUzMl0psxa3QCp3xjWjCEw7kCb5ctkAxDfrHEq2By5vDZsRdGE/EEnjBazX5ua7onRkg7rfz1xSXh1loUSt63eXpOPyIh7KyJ4NjKRRgcYcqH6T7j6TsDuJvFbU2+o3zA0KNYC6u8dgMK1S7YUB8Pud9WnHKcj7oXDEtci8mednFEKQQYva+b0u/QkGuYIFlLayujxQuRoo7FuDy7NXB14avq/b2v7d2hTpZ2fAU/QNc8vV2rGQYBxmjLK/GwK+7fSfOvqbtXzRZekZwyFhi39Gs9YhnXxqk5/PuLoRJrRTOMjGqYebVsy9iDeg+kFJyfrPzV61rZH5kNDEpBsGC2FwIRR5u+azQWtxL0rZ75hXX/dMTJY07mUGmS9d75Ld7n7xTRWPBg67A8r6MPOMqxAzeL6Wch4lOC649XM09xReQvlpg0GQpLuvFueWHkWJ8kDtVo63ZElT2rXSoTJ4i+J5nKtP/zUo=">
+                            </div>
+                            <div class="header">
+                                <h1 class="maintitle">作品</h1>
+                                <div class="filter">
+								<span class="term x-select">
+                                    <select name="ddlTag" id="ddlTag">
+	<option selected="selected" value="">所有案例類別</option>
+	<option value="1">品牌和創意</option>
+	<option value="2">內容行銷</option>
+	<option value="3">公關</option>
+	<option value="4">數據分析</option>
+	<option value="5">社群行銷</option>
+	<option value="6">消費者互動</option>
+	<option value="7">活動</option>
+	<option value="8">數位媒體行銷</option>
+	<option value="9">消費者及零售推廣</option>
+	<option value="10">數位行銷</option>
+
+</select>
+								</span>
+                                    <span class="term x-select">
+									<select name="ddlYear" id="ddlYear">
+	<option selected="selected" value="">所有年份</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option value="2013">2013</option>
+
+</select>
+								</span>
+                                    <span class="term x-select">
+                                    <select name="ddlCompany" id="ddlCompany">
+	<option selected="selected" value="">所有團隊</option>
+	<option value="12">奧美整合行銷傳播集團</option>
+	<option value="1">奧美廣告</option>
+	<option value="2">奧美互動行銷</option>
+	<option value="5">奧美公共關係</option>
+	<option value="6">世紀奧美公關</option>
+	<option value="10">我是大衛廣告</option>
+	<option value="9">紅坊創意</option>
+
+</select>
+								</span>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="content">
+                            <div class="content-inner">
+                                <div class="worklist">
+
+                                    <!-- 每12筆分為一個 <ul> .worklist-row -->
+
+                                    <ul class="worklist-row">
+
+                                        <li class="item">
+                                            <a data-articleid="1" href="works-detailed.html?Serno=1">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">全聯潮包</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/RQ8X4akrYto/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="2" href="works-detailed.html?Serno=2">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">全聯中元『陰陽眼』</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/xaMxlWAcpGc/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="4" href="works-detailed.html?Serno=4">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">7-ELEVEN 鋼琴捐款箱</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/8m52NXyrxFw/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="6" href="works-detailed.html?Serno=6">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">蘇格登 敬 一杯時光系列</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/TExSG1iGMSU/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="7" href="works-detailed.html?Serno=7">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">遠傳電信 #我的未來我來救</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/OjV2OisCjmI/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="8" href="works-detailed.html?Serno=8">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">2015 香港海洋公園 -「哈囉喂全日祭」</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/8-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="9" href="works-detailed.html?Serno=9">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">「再見!蒟蒻佬!」 BYE!BYE!ED!</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/9-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="10" href="works-detailed.html?Serno=10">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">A-class</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/10-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="11" href="works-detailed.html?Serno=11">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">NGCC 代言人</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/11-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="12" href="works-detailed.html?Serno=12">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">遇見夢想 NGCC</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/as5_-b0Q4Gk/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="13" href="works-detailed.html?Serno=13">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">IBM Storage</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/13-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="15" href="works-detailed.html?Serno=15">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">MB Select 網站</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/14-1.jpg">
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <ul class="worklist-row">
+
+                                        <li class="item">
+                                            <a data-articleid="16" href="works-detailed.html?Serno=16">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">Skittles 彩虹糖-「有事嗎？」</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/16-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="17" href="works-detailed.html?Serno=17">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">群義房屋</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/17-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="18" href="works-detailed.html?Serno=18">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">留蘭香 Airwaves 口白大樂隊</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/18-1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="19" href="works-detailed.html?Serno=19">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">可果美蕃紅吧</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/VtQcE9sz9Bs/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="20" href="works-detailed.html?Serno=20">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">18℃，傳送幸福的溫度</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/20.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="21" href="works-detailed.html?Serno=21">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">AMD 2016 COMPUTEX Media Event</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/21_phgcluaswruxputxwkds.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="22" href="works-detailed.html?Serno=22">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">Google十年好時光記者會暨慶祝活動(Google Taiwan’s 10th Anniversary)</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/22_bzdrgowrsvorhasgputy.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="23" href="works-detailed.html?Serno=23">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">NVIDIA GPU 技術大會(2016 NVIDIA GPU Technology Conference Taiwan 2016)</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/23_iaspidjxdrkvljclpgmf.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="24" href="works-detailed.html?Serno=24">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">飛利浦雙向智旋IH電子鍋上市記者會</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/24_momfrxgqgmzidlubecfy.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="25" href="works-detailed.html?Serno=25">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">Dell Enterprise Forum 2015</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/25_ozxvcpfegwhzwdbzgkvh.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="26" href="works-detailed.html?Serno=26">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">愛惠浦『打造最適合你的水』巨型彈珠台 消費者活動</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/AvItNBQmzjc/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="27" href="works-detailed.html?Serno=27">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">奧美集團 30 週年活動</h4>
+                                                </div>
+                                                <img class="pic" src="upload/works/27-1.jpg">
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <ul class="worklist-row">
+
+                                        <li class="item">
+                                            <a data-articleid="28" href="works-detailed.html?Serno=28">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">I SEE YOU</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/aO8bFAa8q7Y/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="29" href="works-detailed.html?Serno=29">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">真麵堂</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/A8uy-UkoLfA/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="30" href="works-detailed.html?Serno=30">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">雙響泡</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/Y2bPt2AabLM/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="32" href="works-detailed.html?Serno=32">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">遠傳電信  用鼓勵讓台灣聽見愛系列</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/kDAKDGcYJoc/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="33" href="works-detailed.html?Serno=33">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">好好吃飯桌</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/3qw7Gigsctk/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="34" href="works-detailed.html?Serno=34">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">#Great2HaveU 有你真好，謝謝!</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/tTHmHCN3qjM/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="35" href="works-detailed.html?Serno=35">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">一分鐘探索影展  再見篇</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/eec8CtQfCYU/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="36" href="works-detailed.html?Serno=36">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">母乳之路</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/_YeagyhDGZM/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="37" href="works-detailed.html?Serno=37">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">小小鼓手演唱會</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/NN2Ss_PQwJM/0.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a data-articleid="38" href="works-detailed.html?Serno=38">
+                                                <div class="heading ff-loud">
+                                                    <h4 class="title">孔雀篇/青蛙篇/螢火蟲篇</h4>
+                                                </div>
+                                                <img class="pic" src="http://img.youtube.com/vi/mvvUvlKVPRs/0.jpg">
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </div><!--/.content-inner-->
+                        </div><!--/.content-->
+                    </div><!--/.row-main-->
+                </div><!--/.page-body-->
+            </section>
+
+            <section data-mainpage="detail" class="mainpage">
+                <div class="redstripe"></div>
+
+                <section data-subpage="1" class="subpage on">
+                    <div class="page-body article-detail">
+                        <div class="row-main">
+                            <div class="header">
+                                <h3 class="meta clr-red">客戶：全聯福利中心</h3>
+                                <h2 class="maintitle clr-red">全聯潮包</h2>
+                                <div class="hr"></div>
+                                <p class="meta clr-black">品牌和創意,內容行銷,社群行銷,消費者互動,活動,數位媒體行銷,消費者及零售推廣,數位行銷</p>
+                            </div>
+                            <div class="content" data-scrollpane="" data-autosize="" style="height: 404px; overflow: hidden; padding: 0px; width: 675px;">
+                                <div class="jspContainer" style="width: 675px; height: 404px;">
+                                    <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 675px;">
+                                        <div class="content-inner htmledit">
+                                            『全聯經濟美學』藉由注入全聯品牌一個時尚美學，成功在台灣社會造成話題，讓人們覺得全聯不是那麼傳統庶民，而是一個年輕有感覺，並且與時俱進的品牌！正因如此，全聯希望今推出『全聯經濟美學2.0』，以品牌的角度出發，倡導一個有關『省錢』的新觀點；同時擴大溝通對象，由針對年輕人到廣大的台灣民眾。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <p class="meta clr-red">團隊： <a class="term" href="http://www.tssc.com.tw/zh/about.aspx#/about-group/ad"><img class="companylogo" src="./tssc &amp; Mather Taiwan _ 觀點_files/ad.png" alt="奧美廣告" /></a> </p>
+                            </div>
+                            <a class="btn-close back" href="works.html#/article" title="回前頁"><i class="icn icn-close"></i></a>
+                        </div>
+                        <div class="row-side">
+                            <div class="content" data-autosize="" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 1920px;">
+                                <div class="jspContainer" style="width: 1920px; height: 877px;">
+                                    <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 1920px;">
+                                        <div class="content-mask">
+                                            <div class="content-outer" style="min-height: 877px;">
+                                                <div class="content-inner">
+                                                    <figure class="picslider" data-picslider="" data-centered="" style="margin-left: 0px; margin-top: 218px;">
+                                                        <ul class="list owl-carousel owl-theme owl-loaded">
+                                                            <!--影片中item，class加上"video"，並包上<a>連結 -->
+                                                            <!-- 圖片item -->
+                                                            <!--影片中item，class加上"video"，並包上<a>連結 -->
+                                                            <!-- 圖片item -->
+                                                            <div class="owl-stage-outer owl-height" style="height: 380px;">
+                                                                <div class="owl-stage" style="transform: translate3d(-3150px, 0px, 0px); transition: 0.25s; width: 6300px;">
+                                                                    <div class="owl-item cloned" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item video"> <a class="link" href="https://www.youtube.com/watch?v=RQ8X4akrYto" target="_blank"> <img src="http://img.youtube.com/vi/RQ8X4akrYto/0.jpg" />
+                                                                            <div class="playbtn">
+                                                                                <div>
+                                                                                    <i class="icn icn-play"></i>
+                                                                                </div>
+                                                                            </div> </a> </li>
+                                                                    </div>
+                                                                    <div class="owl-item cloned" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item"><img src="./tssc &amp; Mather Taiwan _ 觀點_files/1.png" /></li>
+                                                                    </div>
+                                                                    <div class="owl-item" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item video"> <a class="link" href="https://www.youtube.com/watch?v=RQ8X4akrYto" target="_blank"> <img src="http://img.youtube.com/vi/RQ8X4akrYto/0.jpg" />
+                                                                            <div class="playbtn">
+                                                                                <div>
+                                                                                    <i class="icn icn-play"></i>
+                                                                                </div>
+                                                                            </div> </a> </li>
+                                                                    </div>
+                                                                    <div class="owl-item active" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item"><img src="./tssc &amp; Mather Taiwan _ 觀點_files/1.png" /></li>
+                                                                    </div>
+                                                                    <div class="owl-item cloned" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item video"> <a class="link" href="https://www.youtube.com/watch?v=RQ8X4akrYto" target="_blank"> <img src="http://img.youtube.com/vi/RQ8X4akrYto/0.jpg" />
+                                                                            <div class="playbtn">
+                                                                                <div>
+                                                                                    <i class="icn icn-play"></i>
+                                                                                </div>
+                                                                            </div> </a> </li>
+                                                                    </div>
+                                                                    <div class="owl-item cloned" style="width: 1050px; margin-right: 0px;">
+                                                                        <li class="item"><img src="./tssc &amp; Mather Taiwan _ 觀點_files/1.png" /></li>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="owl-controls" style="display: none;">
+                                                                <div class="owl-nav">
+                                                                    <div class="owl-prev" style="display: none;">
+                                                                        prev
+                                                                    </div>
+                                                                    <div class="owl-next" style="display: none;">
+                                                                        next
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ul>
+                                                        <div class="owl-dots" style="">
+                                                            <div class="owl-dot">
+                                                                <span></span>
+                                                            </div>
+                                                            <div class="owl-dot active">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </div><!--/[data-section]-->
+
+
+    </div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+
+
+<!--顶部导航开始-->
+@include("/tssc/include/foot.html"){}
+<!--顶部导航结束-->
+
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js"></script></body></html>

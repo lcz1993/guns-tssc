@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit"/><!-- 让360浏览器默认选择webkit内核 -->
+
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/validate/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/_fstyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/ztree/zTreeStyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
+    <!-- Ueditor编辑器CSS -->
+    <link href="${ctxPath}/static/css/umeditor.min.css" type="text/css" rel="stylesheet">
+    <!-- <link href="${ctxPath}/static/css/plugins/ztree/demo.css" rel="stylesheet"> -->
+
+    <!-- 全局js -->
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${ctxPath}/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/bootstrapValidator.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/zh_CN.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.bootstrap3.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/extension/jquery.treegrid.extension.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/layer.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="${ctxPath}/static/js/plugins/webuploader/webuploader.min.js"></script>
+    <script src="${ctxPath}/static/js/common/ajax-object.js"></script>
+    <script src="${ctxPath}/static/js/common/bootstrap-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/tree-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/web-upload-object.js"></script>
+    <script src="${ctxPath}/static/js/common/ztree-object.js"></script>
+    <script src="${ctxPath}/static/js/common/Feng.js"></script>
+
+    <script type="text/javascript">
+        Feng.addCtx("${ctxPath}");
+        Feng.sessionTimeoutRegistry();
+    </script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="ProductInfoForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#input id="name" name="作品名称" underline="false"/>
+                </div>
+                <div class="col-sm-6">
+                    <#input id="year" name="制作时间" underline="false" type="date"
+                    clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
+                </div>
+                <div class="col-sm-6 b-r">
+                    <#input id="customer" name="客户名称" underline="false"/>
+                </div>
+                <div class="col-sm-6">
+                    <label class="col-sm-2 control-label">制作团队</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="teamId">
+                            <option value="请选择制作团队"></option>
+                            @for(studio in studios){
+                            <option value="${studio.id}">${studio.name}</option>
+                            @}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <label class="col-sm-1 control-label">所属类别</label>
+                    <div>
+                        @for(genre in genres){
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="${genre.id}" value="${genre.name}">${genre.name}
+                        </label>
+                        @}
+                    </div>
+                </div>
+                <!--封面图片和内容图片-->
+
+                <!--封面图片和内容图片-->
+
+                <div>
+                    <label class="col-sm-2 control-label">产品介绍</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!--输入框-->
+                                <script type="text/plain" id="introduce" style="width:100%;height:200px;"></script>
+                                <!--输入框-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ProductInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ProductInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/tssc/product/product_info.js"></script>
+<!-- Ueditor编辑器JS -->
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/ue/lang/zh-cn.js"></script>
+<script type="text/javascript">
+    //实例化Ueditor编辑器
+    var um = UM.getEditor('introduce');
+</script>
+</div>
+<script src="${ctxPath}/static/js/content.js?v=1.0.0"></script>
+</body>
+</html>

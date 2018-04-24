@@ -1,0 +1,259 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>最新消息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css" />
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css" />
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/validate/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/_fstyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/ztree/zTreeStyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
+    <!-- 全局js -->
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${ctxPath}/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/bootstrapValidator.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/zh_CN.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.bootstrap3.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/extension/jquery.treegrid.extension.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/layer.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="${ctxPath}/static/js/plugins/webuploader/webuploader.min.js"></script>
+    <script src="${ctxPath}/static/js/common/ajax-object.js"></script>
+    <script src="${ctxPath}/static/js/common/bootstrap-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/tree-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/web-upload-object.js"></script>
+    <script src="${ctxPath}/static/js/common/ztree-object.js"></script>
+    <script src="${ctxPath}/static/js/common/Feng.js"></script>
+
+    <script type="text/javascript">
+        Feng.addCtx("${ctxPath}");
+        Feng.sessionTimeoutRegistry();
+    </script>
+</head>
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+
+<main class="mastbody">
+    <div class="mastbody-inner">
+
+        <div class="effect-holder" data-effect="news"></div>
+
+        <div data-articleurl="media-detailed.html?Serno={id}" data-listurl="media.html?page=1" data-startpath="#/article"></div>
+
+        <!-- article列表 (網址: #/article)-->
+
+        <div data-section="article" class="section" id="news_section">
+            <section data-mainpage="list" class="mainpage">
+                <div id="ajaxlist" class="page-body article-list">
+                    <div class="row-main">
+                        <div class="header">
+                            <h1 class="maintitle">动态<#button name="添加" icon="fa-plus" clickFun="Product.openAddProduct()"/></h1>
+                        </div>
+                        <div class="content" data-scrollpane="" data-autosize="">
+                            <div class="content-inner">
+                                <ul class="newslist">
+                                    @for(news in newsList){
+                                    <li class="item" onclick="goLeft(event)">
+                                        <input id="id" value="${news.id}">
+                                        <a data-articleid="116" href="media-detailed.html?Serno=116">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">${news.name}</h4>
+                                                <time class="time">2018/03/09</time>
+                                            </div>
+                                            <p class="descr">${news.synopsis}<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+                                    @}
+                                </ul>
+                            </div><!--/.content-inner-->
+                        </div><!--/.content-->
+
+                    </div><!--/.row-main-->
+                </div><!--/.page-body-->
+            </section>
+
+            <section data-mainpage="detail" class="mainpage">
+                <div class="redstripe"></div>
+                <section data-subpage="116" class="subpage on" id="news_data">
+                    <div class="page-body article-detail">
+                        <div class="row-main" style="height: 40px;">
+                            <#button name="编辑" icon="fa-plus" clickFun="News.openNewsDetail()" space="true"/>
+                            <#button name="删除" icon="fa-plus" clickFun="News.delete()" space="true"/>
+                        </div>
+                        <div class="row-main">
+                            <div class="header">
+                                <time class="meta clr-red ff-loud" id="news_time">2018/03/09</time>
+                                <h2 class="maintitle clr-red" id="news_name">面對數位轉型大趨勢，全球奧美數位行銷執行長費思桐公開演說 強調科技與人類共存重要</h2>
+                                <div class="hr"></div>
+                            </div>
+                            <div class="content jspScrollable" data-scrollpane="" data-autosize="" style="height: 387px; overflow: hidden; padding: 0px; outline: none; width: 675px;" tabindex="0">
+                                <div class="jspContainer" style="width: 675px; height: 387px;">
+                                    <div class="jspPane" style="padding: 0px; top: 0px; width: 663px;">
+                                        <div class="content-inner htmledit" id="news_content">
+                                            <!-- HTML上稿區 @start -->
+                                            <p><strong>臺北</strong><strong> ─ 2018 </strong><strong>年</strong><strong> 03</strong><strong>月</strong><strong>09</strong><strong>日</strong><strong> ─</strong>台灣奧美舉辦數位轉型趨勢論壇，全球奧美數位行銷執行長費思桐（Brian Fetherstonhaugh）首次來台公開演講，不藏私的分享奧美協助全球數百家企業的成功心法，總計吸引近三百位企業中高階主管參加。</p>
+                                            <p>&nbsp;</p>
+                                            <p>此次主講者費思桐為全球奧美數位行銷執行長兼奧美集團人資長。擁有超過35年品牌、數位、行銷實戰經驗，費思桐帶領全球奧美團隊提供客戶傑出的數位創意與創新的解決方案，並連續兩年獲得顧能公司(Gartner Group) 評選為「全球數位行銷的領導者」。他的客戶涵蓋各行業的全球頂尖品牌，包括IBM、雀巢、可口可樂、IKEA、聯合利華等。目前他所領導的奧美團隊於全球40個國家設有112個辦公室，有超過5500員工投入數位行銷工作。</p>
+                                            <p>&nbsp;</p>
+                                            <p>在演講中，費思桐強調科技與人性共存的重要性，要在數位轉型趨勢中成功，有三大關鍵要素，強烈的野心( Ambition )、對於人性的洞察，以及採取行動的勇氣。在他多年的經驗中，光是擁有科技是不足以支持數位轉型的。數位轉型必須仰賴人的野心，包含對企業未來的想像和為了改變而奮鬥的決心。而過程中必須善用人性洞察，唯有透過洞察才能夠讓人們與品牌產生情感連結。最重要的是採取行動，其中包含雇用新鮮人才、保持組織靈活度，並且養成新的日常習慣。三大關鍵要素缺一不可，方能成就數位轉型的巨大工程。</p>
+                                            <p>&nbsp;</p>
+                                            <p>費思桐身兼全球奧美集團人資長，也與台灣奧美同仁分享他寶貴的職涯經驗以及職涯不同階段的關鍵，以在變動的環境中持續茁壯。</p>
+                                            <!-- HTML上稿區 @end -->
+                                        </div>
+                                    </div>
+                                    <div class="jspVerticalBar">
+                                        <div class="jspCap jspCapTop"></div>
+                                        <div class="jspTrack" style="height: 387px;">
+                                            <div class="jspDrag" style="height: 259px;">
+                                                <div class="jspDragTop"></div>
+                                                <div class="jspDragBottom"></div>
+                                            </div>
+                                        </div>
+                                        <div class="jspCap jspCapBottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn-close back" href="http://www.ogilvy.com.tw/zh/media.aspx#/article" title="回前頁"><i class="icn icn-close"></i></a>
+                        </div>
+                        <div class="row-side">
+                            <div class="content" data-autosize="" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 1920px;">
+                                <div class="jspContainer" style="width: 1920px; height: 828px;">
+                                    <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 1920px;">
+                                        <div class="content-mask">
+                                            <div class="content-outer" style="min-height: 828px;">
+
+                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 60%;height: 60%;margin: auto;margin-top: 100px;">
+                                                    <!-- Indicators -->
+                                                    <ol class="carousel-indicators" id="img_ol">
+
+                                                    </ol>
+
+                                                    <!-- Wrapper for slides -->
+                                                    <div class="carousel-inner" role="listbox" id="img_div">
+
+                                                    </div>
+
+                                                    <!-- Controls -->
+                                                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </div><!--/[data-section]-->
+
+
+    </div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js"></script>
+<script>
+    function goLeft(event) {
+        var id = $(event.target).children("#id");
+        $.ajax({
+            url:"${ctxPath}/news/detail",
+            type:"post",
+            data:{id:id},
+            dataType:"json",
+            success:function (result){
+                result = result.data;
+                var time = result.time;
+                var name = result.name;
+                var synopsis = result.synopsis;
+                var content = result.content;
+                var images = result.image;
+                var image = images.split(";");
+
+                $("#news_data").attr("data-subpage",id);
+                $("#news_time").text(customer);
+                $("#news_name").text(name);
+                $("#news_content").html(introduce);
+                $("#news_section").attr("style","display: block; opacity: 1; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);");
+
+                var li = "";
+                var div = "";
+                for(var i = 0; i < image.length ; i++){
+                    if(i == 0){
+                        li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
+                        div += '<div class="item  active">';
+                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
+                        div += '<div class="carousel-caption">';
+                        div += '</div>';
+                        div += '</div>';
+                    }else{
+                        li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
+                        div += '<div class="item">';
+                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
+                        div += '<div class="carousel-caption">';
+                        div += '</div>';
+                        div += '</div>';
+                    }
+                }
+                var $li = $(li);
+                var $div = $(div);
+                $("#img_ol").append($li);
+                $("#img_div").append($div);
+            },
+            fail:function () {
+                Feng.error("");
+            }
+        });
+    }
+</script>
+</body>
+</html>

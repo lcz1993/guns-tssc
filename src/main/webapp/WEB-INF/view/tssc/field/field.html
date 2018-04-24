@@ -1,0 +1,257 @@
+<html class="header-pc lang-ch">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true" />
+    <title>关于我们</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta name="google" value="notranslate" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css" />
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css" />
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/validate/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/_fstyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/ztree/zTreeStyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
+    <!-- 全局js -->
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${ctxPath}/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/bootstrapValidator.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/zh_CN.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.bootstrap3.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/extension/jquery.treegrid.extension.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/layer.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="${ctxPath}/static/js/plugins/webuploader/webuploader.min.js"></script>
+    <script src="${ctxPath}/static/js/common/ajax-object.js"></script>
+    <script src="${ctxPath}/static/js/common/bootstrap-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/tree-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/web-upload-object.js"></script>
+    <script src="${ctxPath}/static/js/common/ztree-object.js"></script>
+    <script src="${ctxPath}/static/js/common/Feng.js"></script>
+
+
+    <script type="text/javascript">
+        Feng.addCtx("${ctxPath}");
+        Feng.sessionTimeoutRegistry();
+    </script>
+</head>
+<body ontouchstart="" style="background-color: #AAA">
+
+<div id="loader"><div class="spinner"></div></div>
+
+<!--/.masthead-->
+<main class="mastbody">
+    <div class="mastbody-inner">
+        <div class="effect-holder" data-effect="about"></div>
+        <!--************************
+                    #/about-service
+                ************************-->
+        <div data-section="about-service" class="section">
+            <section data-mainpage="list" class="mainpage">
+                <div class="page-body about-service">
+                    <div class="row-main">
+                        <input type="hidden" value="" id="company_id">
+                        <div class="header" id="company_field">
+                            <h1 class="maintitle"></h1><a onclick="editComField(event)">编辑</a>
+                        </div>
+                        <div class="content" data-scrollpane="" data-autosize="">
+                            <div class="content-inner">
+                                <!--新增服务领域-->
+                                <a onclick="Field.openAddField()" >
+                                    <i class="fa"></i>&nbsp;添加项目
+                                </a>
+                                <ul class="list" id="field_ul">
+                                    <!--服务内容-->
+                                    <!--<li class="item"> <h3 class="title ff-loud"><span class="txt">品牌和創意</span></h3> <p class="descr">我們協助客戶發展具差異性的品牌定位策略，能夠連結消費者的需求，讓有影響力的創意付諸實現並驅動銷售。</p> </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer ff-loud">
+                            <a class="link-white" data-ga-event="about-service-inquiry" href="contact.html">服務洽詢<i class="icn icn-inline icn-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <!--/.mastbody-inner-->
+</main>
+
+<div id="navDots" class="navdots">
+    <div class="outer">
+        <div class="inner">
+            <a class="dot" href="${ctxPath}/studio"><b></b></a>
+            <a class="dot" href="${ctxPath}/personnel"><b></b></a>
+            <a class="dot" href="${ctxPath}/field"><b></b></a>
+            <a class="dot" href="${ctxPath}/company/brand"><b></b></a>
+            <a class="dot" href="${ctxPath}/company/history"><b></b></a>
+            <a class="dot" href="${ctxPath}/company/social"><b></b></a>
+        </div>
+    </div>
+</div>
+<!--/.navdots-->
+<script src="${ctxPath}/static/modular/tssc/field/field_info.js"></script>
+<script src="${ctxPath}/static/modular/tssc/field/field.js"></script>
+<script src="${ctxPath}/static/reception/jquery/jquery-3.3.1.min.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js"></script>
+<script>
+    $(function(){
+        companyInit();
+        fieldInit();
+    });
+
+
+
+    /**
+     * 公司业务名称提交
+     */
+    function submitComField(event) {
+        var btn = $(event.target);
+        var field = btn.parent().prev().val();
+        var div = $("#company_field");
+        var id = $("#company_id").val();
+        $.ajax({
+            url:"${ctxPath}/company/update",
+            data:{param:"id="+id+"&field="+field},
+            dataType:"json",
+            type:"get",
+            success:function (result) {
+                div.empty();
+                var h = "";
+                h += '<h1 class="maintitle">'+field+'</h1><a onclick="editComField(event)">编辑</a>';
+                div.append($(h));
+                Feng.success("提交成功！");
+            },
+            fail:function () {
+                Feng.error("提交失败！");
+            }
+        });
+    }
+    /**
+     * 点击公司业务（服务领域）的编辑
+     */
+    function editComField(event) {
+        var btn = $(event.target);
+        var div = btn.parent();
+        div.empty();
+        var input = "";
+        input += '<div class="input-group">';
+        input += '<input class="form-control" type="text" placeholder="请输入公司服务"/>';
+        input += '<span class="input-group-btn">';
+        input += '<button type="button" class="btn btn-primary" onclick="submitComField(event)">提交</button>';
+        input += '</span>';
+        input += '</div>';
+        var $input = $(input);
+        div.append($input);
+    }
+    /**
+     * 删除领域
+     */
+    function deleteField(event) {
+        layer.confirm("确认删除？",function () {
+            var btn = $(event.target);
+            var id = btn.parent().prev().val();
+            $.ajax({
+                url:"${ctxPath}/field/delete",
+                data:{id:id},
+                dataType:"json",
+                type:"post",
+                success:function (result) {
+                    window.location.reload();
+                    Feng.success("提交成功！");
+                },
+                fail:function () {
+                    Feng.success("提交失败！");
+                }
+            });
+        });
+    }
+    /**
+     * 公共部分初始化
+     */
+    function companyInit(){
+        $.ajax({
+            url:"${ctxPath}/company/get",
+            type:"get",
+            dataType:"json",
+            success:function (result) {
+                result = result.data;
+                var field = result.field;
+                $("#company_field h1").text(field);
+                $("#company_id").val(result.id);
+            },
+            fail:function () {
+                $("#company_field h1").text("服务领域");
+            }
+        });
+    }
+
+    /**
+     * 服务领域内容初始化
+     */
+    function  fieldInit(){
+        $.ajax({
+            url:"${ctxPath}/field/list",
+            type:"get",
+            dataType:"json",
+            success:function (result) {
+                result = result.data;
+                for(var i in result){
+                    var field = result[i];
+                    var id = field.id;
+                    var introduce = field.introduce;
+                    var name = field.name;
+                    var li = "";
+                    li+='<li class="item">';
+                    li+='<input type="hidden" value="'+id+'" >';
+                    li+='<h3 class="title ff-loud">';
+                    li+='<span class="txt">'+name+'</span>';
+                    li+='<a onclick="deleteField(event);"style="float:left;font-size: 14px;font-weight: normal;">删除</a>';
+                    li+='<a onclick="Field.openFieldDetail(event)" style="float:right;font-size: 14px;font-weight: normal;">编辑</a></h3>';
+                    li+='<p class="descr">'+introduce+'</p>';
+                    li+='</li>';
+                    var $li = $(li);
+                    $("#field_ul").append($li);
+                }
+            },
+            fail:function () {
+                Feng.error("加载失败");
+            }
+        });
+    }
+</script>
+</body>
+</html>

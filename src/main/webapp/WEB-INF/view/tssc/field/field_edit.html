@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="FieldInfoForm">
+
+            <input type="hidden" id="id" value="${field.id}">
+
+            <div class="row">
+                <#input id="name" name="服务名称" underline="false" value="${field.name}"/>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">服务简介</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="introduce" name="introduce">
+                            ${field.introduce}
+                        </textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="FieldInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="FieldInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/tssc/field/field_info.js"></script>
+@}

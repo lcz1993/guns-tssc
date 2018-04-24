@@ -1,0 +1,209 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>Ogilvy &amp; Mather Taiwan | 觀點</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+
+
+    <!--[if lte IE 8]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css">
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css">
+</head>
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+
+<!--顶部导航开始-->
+@include("/tssc/include/head.html"){}
+<!--顶部导航结束-->
+
+
+<main class="mastbody">
+    <div class="mastbody-inner">
+
+        <div class="effect-holder" data-effect="viewpoints"></div>
+
+
+        <!--************************
+                觀點/列表
+            ************************-->
+
+        <!--
+            頁面串套設定：
+
+            data-articleurl 	填入：本單元內頁含有{id}組成格式的網址，js將處理成內頁網址  e.g  /events.html?id={id}  or  /news/?aid={id}  or  /myname/?x={id}
+            data-listurl 		填入：本單元列表第一頁的網址 (因若user直接造訪內頁，則回列表時回第一頁)   e.g  /newslist.html?page=1  or /events/page/1
+            data-startpath 		勿更改！
+
+            依"頁次"輸出本列表頁內容，每頁10筆做分頁
+
+            <a> data-articleid			填入：ID值，並且 href 填入內頁實體網址 (js會實際去ajax)
+            <a> data-appendlist 的 href	填入：下一頁次的列表網址		e.g 現在第2頁，則填入第3頁網址
+
+            若在資料末頁，則把<a data-appendlist>按鈕隱藏
+        -->
+        <div data-articleurl="viewpoints-detailed.html?Serno={id}" data-listurl="viewpoints.html?page=1" data-startpath="#/article"></div>
+
+        <!-- article列表 (網址: #/article)-->
+
+        <div data-section="article" class="section">
+            <section data-mainpage="list" class="mainpage">
+                <div id="ajaxlist" class="page-body article-list">
+                    <div class="row-main">
+                        <div class="header">
+                            <h1 class="maintitle">觀點</h1>
+                        </div>
+                        <div class="content" data-scrollpane="" data-autosize="">
+                            <div class="content-inner">
+                                <ul class="newslist">
+
+                                    <li class="item">
+                                        <a data-articleid="83" href="viewpoints-detailed.html?Serno=83">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">城市品牌體驗之旅   “好感”是關鍵   </h4>
+                                                <div class="author">莊淑芬</div>
+                                            </div>
+                                            <p class="descr">城市的美好不在建設發展，而在給人有好”感受”，城市行銷、國家品牌從和旅客”交朋友”開始。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="86" href="viewpoints-detailed.html?Serno=86">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">今年中元節，你看見了什麼？</h4>
+                                                <div class="author">許力心</div>
+                                            </div>
+                                            <p class="descr">「今年全聯中元節貞子跟傑森要玩什麼？」<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="87" href="viewpoints-detailed.html?Serno=87">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">數位讓廣告分眾還是不分眾</h4>
+                                                <div class="author">李宛芸</div>
+                                            </div>
+                                            <p class="descr">2016年初Adobe進入在台灣設立“Adobe Marketing Cloud”第一個業務團隊，看準大數據的趨勢，Adobe團隊希望提供客戶更精準的數位媒體企劃，甚至透過目標對象在網路上的行為數據，主動為客戶抓住最準確的受眾對象。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="2" href="viewpoints-detailed.html?Serno=2">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">[Young Ogilvy] 2011精兵計畫 心得分享</h4>
+                                                <div class="author">奧美台北 許珈華</div>
+                                            </div>
+                                            <p class="descr">去年八月進奧美，剛開始都儀表堂堂，穿著條紋襯衫、西裝褲和梳工整馬尾，現在想起來都有些尷尬。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="5" href="viewpoints-detailed.html?Serno=5">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">與其賣”概念”，不如賣”性格” BAO先生成名記</h4>
+                                                <div class="author">周晨</div>
+                                            </div>
+                                            <p class="descr">在“無社交不行銷”的年代，幾乎所有品牌都在社交領域躍躍欲試。原因是我們期望影響的受眾、所要販賣產品的物件，已漸漸習慣於在社交媒體上表達觀點，獲取資訊。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="6" href="viewpoints-detailed.html?Serno=6">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">為和不為─”網上超市，不二之選，1號店”</h4>
+                                                <div class="author">袁勇</div>
+                                            </div>
+                                            <p class="descr">2012年，電商大佬們頻繁叫板約架，死掐價格讓利，前幾名的都放手一搏，懷著氣吞山河如虎的決心開拓著自己的領地，誰都想去對手地盤上反客為主一回，誰都想統一一下消費者的錢包，來個大小通吃。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="7" href="viewpoints-detailed.html?Serno=7">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">創意指令 China’s Creative Imperative</h4>
+                                                <div class="author">辛默/凌雲劍</div>
+                                            </div>
+                                            <p class="descr">在過去20年中，隨著中國擺脫強制文化並對外開放，中國向世界呈現了驚人的發展速度和風采。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="10" href="viewpoints-detailed.html?Serno=10">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">”面子”新解</h4>
+                                                <div class="author">柯穎德/方嘉樹</div>
+                                            </div>
+                                            <p class="descr">在所有中國經商指南中，第一條黃金法則幾乎都是關於“給面子”或避免“丟面子”的重要性。為了解釋面子的微妙含義，通常需要列舉給面子、認面子、保面子或丟面子的案例。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="13" href="viewpoints-detailed.html?Serno=13">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">非請莫入！-eCRM在豪車行銷中的一例應用</h4>
+                                                <div class="author">陶煉丹</div>
+                                            </div>
+                                            <p class="descr">2011年，一台百萬級別豪華進口轎車奧迪A8L在中國上市,兩個月的預售活動中，共接觸到1774位元高價值潛在客戶，其中1198人親自預賞樣車，共產生508份訂單（現場訂車率超過42％），最終轉化為近三成的實際銷售。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                    <li class="item">
+                                        <a data-articleid="16" href="viewpoints-detailed.html?Serno=16">
+                                            <div class="heading ff-loud">
+                                                <h4 class="title">聲音的威力</h4>
+                                                <div class="author">樊克明(金以諾 譯)</div>
+                                            </div>
+                                            <p class="descr">聽著，你想不想聽一下能改進你作品的最好方法，讓它能夠引人入勝，或是讓人記憶猶新？那就是聲音。<i class="icn icn-inline icn-angle-right"></i></p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div><!--/.content-inner-->
+                        </div><!--/.content-->
+
+                        <div class="footer">
+                            <a id="pagelist" data-appendlist="btn-more" class="link-white" href="viewpoints.html?page=1" data-count="3" title="載入下一頁">更多觀點<i class="icn icn-inline icn-angle-right"></i></a>
+                        </div>
+
+                    </div><!--/.row-main-->
+                </div><!--/.page-body-->
+            </section>
+
+            <section data-mainpage="detail" class="mainpage">
+                <div class="redstripe"></div>
+            </section>
+        </div><!--/[data-section]-->
+
+
+    </div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+<!--顶部导航开始-->
+@include("/tssc/include/foot.html"){}
+<!--顶部导航结束-->
+
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js"></script></body></html>
