@@ -100,7 +100,7 @@ public class NewsController extends BaseController {
      */
     @RequestMapping(value = "/detail")
     @ResponseBody
-    public JsonResult detail(String newsId, Model model) {
-        return new JsonResult(iNewsService.get(newsId));
+    public JsonResult detail(String id, Model model) {
+        return new JsonResult(iNewsService.get(id));
     }
 }

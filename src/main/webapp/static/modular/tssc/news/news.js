@@ -51,17 +51,15 @@ News.openAddNews = function () {
  * 打开查看新闻详情
  */
 News.openNewsDetail = function () {
-    if (this.check()) {
-        var index = layer.open({
-            type: 2,
-            title: '新闻详情',
-            area: ['800px', '420px'], //宽高
-            fix: false, //不固定
-            maxmin: true,
-            content: Feng.ctxPath + '/news/news_update/' + News.seItem.id
-        });
-        this.layerIndex = index;
-    }
+    var index = layer.open({
+        type: 2,
+        title: '新闻详情',
+        area: ['800px', '420px'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/news/news_update/' + News.seItem.id
+    });
+    this.layerIndex = index;
 };
 
 /**

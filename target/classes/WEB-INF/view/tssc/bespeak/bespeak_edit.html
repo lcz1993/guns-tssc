@@ -1,0 +1,51 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="BespeakInfoForm">
+
+            <input type="hidden" id="id" value="${bespeak.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#input id="name" name="名称" underline="false" value="${bespeak.name}"/>
+                    <#input id="email" name="邮箱" underline="false" value="${bespeak.email}"/>
+                    <#input id="companyName" name="公司名称" underline="false" value="${bespeak.companyName}"/>
+                    <#input id="budget" name="预算" underline="false" value="${bespeak.budget}"/>
+                </div>
+                <div class="col-sm-6">
+                    <#input id="title" name="职称" underline="false" value="${bespeak.title}"/>
+                    <#input id="tel" name="电话" underline="false" value="${bespeak.tel}"/>
+                    <#input id="companyWeb" name="公司网站" underline="false" value="${bespeak.companyWeb}"/>
+                    <#input id="brand" name="品牌" underline="false" value="${bespeak.brand}"/>
+                </div>
+
+                <div class="">
+                    <label class="col-sm-1 control-label">服务</label>
+                    <div id="bespeak_service" class="col-sm-10">
+                        @for(genre in genres){
+                            <input type="checkbox" value="${genre.id}" name="service">${genre.name}
+                        @}
+                    </div>
+                    <span style="font-size: 8px;color: red;margin-left: 10%;">*注意：不选中任意一项为不修改此项。</span>
+                </div>
+
+                <div>
+                    <label class="col-sm-1 control-label">详细内容</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="remark" name="remark" type="text" style="height: 150px;">${bespeak.remark}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="BespeakInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="BespeakInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/tssc/bespeak/bespeak_info.js"></script>
+@}

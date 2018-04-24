@@ -65,7 +65,7 @@
     </script>
 </head>
 
-<body ontouchstart="">
+<body ontouchstart="" style="background-color: #AAA;">
 
 <div id="loader"><div class="spinner"></div></div>
 
@@ -83,18 +83,18 @@
                 <div id="ajaxlist" class="page-body article-list">
                     <div class="row-main">
                         <div class="header">
-                            <h1 class="maintitle">动态<#button name="添加" icon="fa-plus" clickFun="Product.openAddProduct()"/></h1>
+                            <h1 class="maintitle">动态<#button name="添加" icon="fa-plus" clickFun="News.openAddNews()"/></h1>
                         </div>
                         <div class="content" data-scrollpane="" data-autosize="">
                             <div class="content-inner">
                                 <ul class="newslist">
                                     @for(news in newsList){
-                                    <li class="item" onclick="goLeft(event)">
-                                        <input id="id" value="${news.id}">
+                                    <li class="item" onclick="goLeft(${news.id})">
+                                        <input id="id" value="${news.id}" type="hidden">
                                         <a data-articleid="116" href="media-detailed.html?Serno=116">
                                             <div class="heading ff-loud">
                                                 <h4 class="title">${news.name}</h4>
-                                                <time class="time">2018/03/09</time>
+                                                <time class="time">${news.time}</time>
                                             </div>
                                             <p class="descr">${news.synopsis}<i class="icn icn-inline icn-angle-right"></i></p>
                                         </a>
@@ -113,28 +113,26 @@
                 <section data-subpage="116" class="subpage on" id="news_data">
                     <div class="page-body article-detail">
                         <div class="row-main" style="height: 40px;">
-                            <#button name="编辑" icon="fa-plus" clickFun="News.openNewsDetail()" space="true"/>
-                            <#button name="删除" icon="fa-plus" clickFun="News.delete()" space="true"/>
+                            <#button name="编辑" icon="fa-plus" space="true" id="news_edit"/>
+                            <#button name="删除" icon="fa-plus" clickFun="News.delete()" space="true" id="news_delete"/>
                         </div>
                         <div class="row-main">
                             <div class="header">
-                                <time class="meta clr-red ff-loud" id="news_time">2018/03/09</time>
-                                <h2 class="maintitle clr-red" id="news_name">面對數位轉型大趨勢，全球奧美數位行銷執行長費思桐公開演說 強調科技與人類共存重要</h2>
+                                <time class="meta clr-red ff-loud" id="news_time">
+                                    <!--时间-->
+                                </time>
+                                <h2 class="maintitle clr-red" id="news_name">
+                                    <!--名称-->
+                                </h2>
                                 <div class="hr"></div>
                             </div>
                             <div class="content jspScrollable" data-scrollpane="" data-autosize="" style="height: 387px; overflow: hidden; padding: 0px; outline: none; width: 675px;" tabindex="0">
                                 <div class="jspContainer" style="width: 675px; height: 387px;">
                                     <div class="jspPane" style="padding: 0px; top: 0px; width: 663px;">
                                         <div class="content-inner htmledit" id="news_content">
-                                            <!-- HTML上稿區 @start -->
-                                            <p><strong>臺北</strong><strong> ─ 2018 </strong><strong>年</strong><strong> 03</strong><strong>月</strong><strong>09</strong><strong>日</strong><strong> ─</strong>台灣奧美舉辦數位轉型趨勢論壇，全球奧美數位行銷執行長費思桐（Brian Fetherstonhaugh）首次來台公開演講，不藏私的分享奧美協助全球數百家企業的成功心法，總計吸引近三百位企業中高階主管參加。</p>
-                                            <p>&nbsp;</p>
-                                            <p>此次主講者費思桐為全球奧美數位行銷執行長兼奧美集團人資長。擁有超過35年品牌、數位、行銷實戰經驗，費思桐帶領全球奧美團隊提供客戶傑出的數位創意與創新的解決方案，並連續兩年獲得顧能公司(Gartner Group) 評選為「全球數位行銷的領導者」。他的客戶涵蓋各行業的全球頂尖品牌，包括IBM、雀巢、可口可樂、IKEA、聯合利華等。目前他所領導的奧美團隊於全球40個國家設有112個辦公室，有超過5500員工投入數位行銷工作。</p>
-                                            <p>&nbsp;</p>
-                                            <p>在演講中，費思桐強調科技與人性共存的重要性，要在數位轉型趨勢中成功，有三大關鍵要素，強烈的野心( Ambition )、對於人性的洞察，以及採取行動的勇氣。在他多年的經驗中，光是擁有科技是不足以支持數位轉型的。數位轉型必須仰賴人的野心，包含對企業未來的想像和為了改變而奮鬥的決心。而過程中必須善用人性洞察，唯有透過洞察才能夠讓人們與品牌產生情感連結。最重要的是採取行動，其中包含雇用新鮮人才、保持組織靈活度，並且養成新的日常習慣。三大關鍵要素缺一不可，方能成就數位轉型的巨大工程。</p>
-                                            <p>&nbsp;</p>
-                                            <p>費思桐身兼全球奧美集團人資長，也與台灣奧美同仁分享他寶貴的職涯經驗以及職涯不同階段的關鍵，以在變動的環境中持續茁壯。</p>
-                                            <!-- HTML上稿區 @end -->
+                                            <!-- HTML上稿區 start -->
+
+                                            <!-- HTML上稿區 end -->
                                         </div>
                                     </div>
                                     <div class="jspVerticalBar">
@@ -149,7 +147,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn-close back" href="http://www.ogilvy.com.tw/zh/media.aspx#/article" title="回前頁"><i class="icn icn-close"></i></a>
+                            <a class="btn-close back" href="${ctxPath}/news" title="回前頁"><i class="icn icn-close"></i></a>
                         </div>
                         <div class="row-side">
                             <div class="content" data-autosize="" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 1920px;">
@@ -200,9 +198,11 @@
 <script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
 <script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
 <script src="${ctxPath}/static/reception/js/main.js"></script>
+<script src="${ctxPath}/static/modular/tssc/news/news.js"></script>
+
 <script>
-    function goLeft(event) {
-        var id = $(event.target).children("#id");
+    function goLeft(id) {
+        console.log(id);
         $.ajax({
             url:"${ctxPath}/news/detail",
             type:"post",
@@ -212,16 +212,18 @@
                 result = result.data;
                 var time = result.time;
                 var name = result.name;
-                var synopsis = result.synopsis;
+                // var synopsis = result.synopsis;//简介
                 var content = result.content;
                 var images = result.image;
                 var image = images.split(";");
 
                 $("#news_data").attr("data-subpage",id);
-                $("#news_time").text(customer);
+                $("#news_time").text(time);
                 $("#news_name").text(name);
-                $("#news_content").html(introduce);
+                $("#news_content").html(content);
                 $("#news_section").attr("style","display: block; opacity: 1; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);");
+                $("#news_edit").attr("onclick","openNewsDetail("+id+")");
+                $("#news_delete").attr("onclick","deleteNews("+id+")");
 
                 var li = "";
                 var div = "";
@@ -229,7 +231,7 @@
                     if(i == 0){
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
                         div += '<div class="item  active">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/news/"'+image[i]+' width="608px" height="308px" alt="...">';
                         div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
@@ -237,7 +239,7 @@
                     }else{
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
                         div += '<div class="item">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/news/"'+image[i]+' width="608px" height="308px" alt="...">';
                         div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
@@ -254,6 +256,34 @@
             }
         });
     }
+
+    /**
+     * 打开查看新闻详情
+     */
+    function openNewsDetail(id) {
+        var index = layer.open({
+            type: 2,
+            title: '新闻详情',
+            area: ['800px', '420px'], //宽高
+            fix: false, //不固定
+            maxmin: true,
+            content: Feng.ctxPath + '/news/news_update/' + id
+        });
+        this.layerIndex = index;
+    };
+    /**
+     * 删除新闻
+     */
+    function deleteNews(id){
+        var ajax = new $ax(Feng.ctxPath + "/news/delete", function (data) {
+            Feng.success("删除成功!");
+            News.table.refresh();
+        }, function (data) {
+            Feng.error("删除失败!" + data.responseJSON.message + "!");
+        });
+        ajax.set("newsId",id);
+        ajax.start();
+    };
 </script>
 </body>
 </html>
