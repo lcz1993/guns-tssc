@@ -19,8 +19,44 @@ public class Company extends Model<Company> {
     private String historyContent;
     private String socialResponsibility;
     private String socialResponsibilityContent;
+    private String growup;
+    private String growupContent;
+    private String welfare;
+    private String welfareContent;
 
     public Company() {
+    }
+
+    public String getGrowup() {
+        return growup;
+    }
+
+    public void setGrowup(String growup) {
+        this.growup = growup;
+    }
+
+    public String getGrowupContent() {
+        return growupContent;
+    }
+
+    public void setGrowupContent(String growupContent) {
+        this.growupContent = growupContent;
+    }
+
+    public String getWelfare() {
+        return welfare;
+    }
+
+    public void setWelfare(String welfare) {
+        this.welfare = welfare;
+    }
+
+    public String getWelfareContent() {
+        return welfareContent;
+    }
+
+    public void setWelfareContent(String welfareContent) {
+        this.welfareContent = welfareContent;
     }
 
     public String getHistoryContent() {

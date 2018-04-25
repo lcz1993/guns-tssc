@@ -131,6 +131,34 @@ Company.companySocialEdit = function(){
     });
     this.layerIndex = index;
 }
+/**
+ * 打开公司成长计划编辑
+ */
+Company.companyGrowupEdit = function(){
+    var index = layer.open({
+        type: 2,
+        title: '编辑公司成长',
+        area: ['100%', '100%'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/company/growup_update/'
+    });
+    this.layerIndex = index;
+}
+/**
+ * 打开公司成长计划编辑
+ */
+Company.companyWelfareEdit = function(){
+    var index = layer.open({
+        type: 2,
+        title: '编辑公司福利',
+        area: ['100%', '100%'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/company/welfare_update/'
+    });
+    this.layerIndex = index;
+}
 
 $(function () {
     var defaultColunms = Company.initColumn();
