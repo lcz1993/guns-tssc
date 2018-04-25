@@ -4,13 +4,28 @@ import com.baomidou.mybatisplus.activerecord.Model;
 
 import java.io.Serializable;
 
+/**
+ * 服务领域基类
+ *@author lcz
+ */
 public class Field extends Model<Field>{
 
     private static final long serialVersionUID = 1L;
-
+    /**
+     * 唯一主键
+     */
     private String id;
+    /**
+     *名称
+     */
     private String name;
+    /**
+     * 简介
+     */
     private String synopsis;
+    /**
+     * 介绍
+     */
     private String introduce;
 
     public Field() {

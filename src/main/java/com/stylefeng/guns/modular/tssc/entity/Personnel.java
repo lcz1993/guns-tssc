@@ -1,8 +1,11 @@
 package com.stylefeng.guns.modular.tssc.entity;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Personnel  extends Model<Personnel> {
     private static final long serialVersionUID = 1L;
@@ -10,17 +13,43 @@ public class Personnel  extends Model<Personnel> {
     /**
      * 与数据库属性一一对应
      */
+    /**
+     * 唯一主键
+     */
     private String id;
+    /**
+     * 名称
+     */
     private String name;
     /**
-     * 对应数据库 eng_name
+     * 对应数据库 eng_name，英文名称
      */
     private String engName;
+    /**
+     * 职位
+     */
     private String position;
+    /**
+     * 介绍
+     */
     private String introduce;
+    /**
+     * 图片
+     */
     private String image;
 
+    @TableField(exist = false)
+    private List<String> positionList = new ArrayList<>();
+
     public Personnel() {
+    }
+
+    public List<String> getPositionList() {
+        return positionList;
+    }
+
+    public void setPositionList(List<String> positionList) {
+        this.positionList = positionList;
     }
 
     public String getId() {

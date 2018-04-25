@@ -5,23 +5,71 @@ import com.stylefeng.guns.common.persistence.model.Menu;
 
 import java.io.Serializable;
 
+/**
+ * 公司类
+ * @author lcz
+ */
 public class Company extends Model<Company> {
     private static final long serialVersionUID = 1L;
-
+    /**
+     * 唯一主键
+     */
     private String id;
+    /**
+     * 公司名称
+     */
     private String name;
+    /**
+     *公司介绍
+     */
     private String introduction;
+    /**
+     *员工
+     */
     private String personnel;
+    /**
+     *  品牌
+     */
     private String brand;
+    /**
+     * 品牌内容
+     */
     private String brandContent;
+    /**
+     *服务领域
+     */
     private String field;
+    /**
+     * 历史沿革
+     */
     private String history;
+    /**
+     * 历史内容
+     */
     private String historyContent;
+    /**
+     *社会责任
+     */
     private String socialResponsibility;
+    /**
+     * 社会责任内容
+     */
     private String socialResponsibilityContent;
+    /**
+     * 训练成长
+     */
     private String growup;
+    /**
+     * 训练成长内容
+     */
     private String growupContent;
+    /**
+     *公司福利
+     */
     private String welfare;
+    /**
+     *福利内容
+     */
     private String welfareContent;
 
     public Company() {
