@@ -1,7 +1,7 @@
 <html class="header-pc lang-ch"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
-    <title>Ogilvy &amp; Mather Taiwan | 服務洽詢</title>
+    <title>服务预约</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="google" value="notranslate">
     <meta http-equiv="cleartype" content="on">
@@ -55,13 +55,13 @@
 
                         <div class="row-main">
                             <div class="header">
-                                <h2 class="maintitle clr-red">服務洽詢</h2>
+                                <h2 class="maintitle clr-red">服务洽谈</h2>
                             </div>
                             <div class="content">
                                 <div class="content-inner">
-                                    如果您在尋求奧美集團的相關業務服務，<br>
-                                    請填寫下方的表格，我們會盡快回覆給您。<br>
-                                    或可撥打 <span class="clr-red fs-lg-4 ff-loud">(02)7745-1688</span>
+                                    如果您在寻求腾盛时创的相关业务服务，<br>
+                                    请填写下方的表格，我们会尽快回复给您。<br>
+                                    或可拨打 <span class="clr-red fs-lg-4 ff-loud">0354-3088222</span>
                                 </div>
                             </div>
                         </div><!--/.row-main-->
@@ -72,131 +72,89 @@
                                     <div class="content-outer">
                                         <div class="content-inner">
 
-
                                             <!-- 表單 -->
-                                            <form id="form1">
+                                            <form id="form1" action="${ctxPath}/tssc/contact/submit" type="post">
                                                 <div class="row-form">
                                                     <div class="form-header">
-                                                        <p class="notes fs-sm-2 clr-grey">標<i class="rq">*</i>項為必填</p>
+                                                        <p class="notes fs-sm-2 clr-grey">标<i class="rq">*</i>项为必填</p>
                                                     </div>
-                                                    <div class="form-row namerow">
-                                                        <div class="col-label"><i class="rq">*</i>姓</div>
+                                                    <div class="form-row">
+                                                        <div class="col-label"><i class="rq">*</i>姓名</div>
                                                         <div class="col-value">
-                                                            <div class="namecol">
-                                                                <div class="col fname-label">
-                                                                    <span class="label-inline"><i class="rq">*</i>姓</span>
-                                                                </div>
-                                                                <div class="col fname-value">
-                                                                    <input class="x-input" name="last_name" id="last_name" type="text" maxlength="24">
-                                                                </div>
-                                                                <div class="col lname-label">
-                                                                    <span class="label-inline"><i class="rq">*</i>名</span>
-                                                                </div>
-                                                                <div class="col lname-value">
-                                                                    <input class="x-input " name="first_name" id="first_name" type="text" maxlength="24">
-                                                                </div>
-                                                            </div>
+                                                            <input class="x-input" name="name" id="name" type="text" maxlength="32" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>職稱</div>
+                                                        <div class="col-label"><i class="rq">*</i>职称</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="job_title" id="job_title" type="text" maxlength="32">
+                                                            <input class="x-input" name="title" id="title" type="text" maxlength="32" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>電子郵件信箱</div>
+                                                        <div class="col-label"><i class="rq">*</i>电子邮箱</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="email" id="email" type="text" maxlength="100">
+                                                            <input class="x-input" name="email" id="email" type="text" maxlength="100" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>聯絡電話</div>
+                                                        <div class="col-label"><i class="rq">*</i>联系电话</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="phone" id="phone" type="text" maxlength="20">
+                                                            <input class="x-input" name="tel" id="tel" type="text" maxlength="20" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>公司名稱</div>
+                                                        <div class="col-label"><i class="rq">*</i>公司名称</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="company" id="company" type="text" maxlength="64">
+                                                            <input class="x-input" name="companyName" id="companyName" type="text" maxlength="64" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>公司網址</div>
+                                                        <div class="col-label"><i class="rq">*</i>公司网址</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="website" id="website" type="text" maxlength="128">
+                                                            <input class="x-input" name="companyWeb" id="companyWeb" type="text" maxlength="128" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label">預算</div>
+                                                        <div class="col-label">预算</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="budget" id="budget" type="text" maxlength="64">
+                                                            <input class="x-input" name="budget" id="budget" type="text" maxlength="64" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
-                                                        <div class="col-label">需要服務的產品品牌</div>
+                                                        <div class="col-label">服务品牌</div>
                                                         <div class="col-value">
-                                                            <input class="x-input" name="product_need" id="product_need" type="text" maxlength="128">
+                                                            <input class="x-input" name="brand" id="brand" type="text" maxlength="128" required="required">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-row vert">
-                                                        <div class="col-label"><i class="rq">*</i><span class="clr-red">請勾選您想詢問代理業務的公司 (可複選，點選公司名稱可參考簡介與服務)</span></div>
+                                                        <div class="col-label"><i class="rq">*</i><span class="clr-red">需要提供的服务 (可复选，点击服务项目可参考服务说明)</span></div>
                                                         <div class="col-value">
                                                             <ul class="selectcompany">
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="奧美廣告" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/ad" target="_blank">奧美廣告</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="達彼思廣告" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/bateschi" target="_blank">達彼思廣告</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="奧美互動行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/one" target="_blank">奧美互動行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="我是大衛廣告" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/bateschi" target="_blank">我是大衛廣告</a></label></span></li>
+                                                                @for(genre in genres){
+                                                                <li>
+                                                                    <span class="x-check">
+                                                                        <input name="service" value="${genre.id}" type="checkbox">
+                                                                        <label>
+                                                                            <a class="link-black link-hoverline" href="${ctxPath}/tssc/about#/about-service" target="_blank">${genre.name}</a>
+                                                                        </label>
+                                                                    </span>
+                                                                </li>
+                                                                @}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
 
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="紅坊創意" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/ho" target="_blank">紅坊創意</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="奧美公關" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/pr" target="_blank">奧美公關</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="經緯行動策略行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/geometry" target="_blank">經緯行動策略行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="世紀奧美公關" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-group/era" target="_blank">世紀奧美公關</a></label></span></li>
-                                                                <li><span class="x-check"><input name="ogilvy_company" value="其他" type="checkbox"><label>其他</label></span></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
                                                     <div class="form-row vert">
-                                                        <div class="col-label"><i class="rq">*</i><span class="clr-red">請勾選您想洽詢的服務 (可複選，點選服務項目可參考服務說明)</span></div>
+                                                        <div class="col-label"><i class="rq">*</i>请简述想要您的需要服务内容、预期完成时间…等 (字数上限：2,000字)</div>
                                                         <div class="col-value">
-                                                            <ul class="selectcompany">
-                                                                <li><span class="x-check"><input name="business_need" value="品牌和創意" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">品牌和創意</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="消費者互動" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">消費者互動</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="內容行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">內容行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="活動" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">活動</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="公關" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">公關</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="數位媒體行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">數位媒體行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="數據分析" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">數據分析</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="消費者及零售推廣" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">消費者及零售推廣</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="社群行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">社群行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="數位行銷" type="checkbox"><label><a class="link-black link-hoverline" href="about.html#/about-service" target="_blank">數位行銷</a></label></span></li>
-                                                                <li><span class="x-check"><input name="business_need" value="其他" type="checkbox"><label>其他</label></span><input type="text" name="business_need_text" id="business_need_text" maxlength="15" placeholder="限15字" style="width:80%;"></li>
-                                                            </ul>
+                                                            <textarea class="x-input" name="remark" id="remark" maxlength="2000"></textarea>
                                                         </div>
                                                     </div>
-                                                    <!--<div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>需要奧美的服務項目</div>
-                                                        <div class="col-value">
-                                                            <input class="x-input" name="business_need" id="business_need" type="text" maxlength="128">
-                                                        </div>
-                                                    </div>-->
-                                                    <div class="form-row vert">
-                                                        <div class="col-label"><i class="rq">*</i>請簡述想要您的需要的服務內容、預期完成時間…等 (字數上限：2,000字)</div>
-                                                        <div class="col-value">
-                                                            <textarea class="x-input" name="description" id="description" maxlength="2000"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col-label"><i class="rq">*</i>請輸入驗證碼</div>
-                                                        <div class="col-value">
-                                                            <input class="x-input" name="valid_code" id="valid_code" type="text" maxlength="6" style="width:90px;text-align:center">
-                                                            <img title="重新整理" id="validcode" onmouseout="doMouseOut()" onmouseover="docursor()" onclick="reloadcode()" src="/ValidCode.html" style="display:inline-block;height:24px;width:auto;margin-left:3px;vertical-align: middle;">
-                                                        </div>
-                                                    </div>
+
                                                     <div class="form-footer">
-                                                        <button id="inquiryBtnSubmit" class="btn-prime btn-prime-grey" type="button" onclick="check_form();"><b>確認送出<i class="icn icn-inline icn-angle-right"></i></b></button>
+                                                        <!--<input type="submit" id="inquiryBtnSubmit" class="btn-prime btn-prime-grey icn icn-inline icn-angle-right" value="确认送出">-->
+                                                        <button id="inquiryBtnSubmit" class="btn-prime btn-prime-grey" type="submit"><b>确认送出<i class="icn icn-inline icn-angle-right"></i></b></button>
                                                     </div>
                                                 </div>
                                             </form><!--/.form-->
@@ -205,8 +163,8 @@
                                             <div class="row-result">
                                                 <div class="message">
                                                     <p>
-                                                        <span class="clr-red fs-lg-5">資料已傳送成功！</span><br>
-                                                        我們會盡快回覆給您。
+                                                        <span class="clr-red fs-lg-5">资料已送出成功！</span><br>
+                                                        我们会尽快回复给您。
                                                     </p>
                                                 </div>
                                             </div><!--/.result-->
@@ -239,4 +197,6 @@
 
 <script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
 <script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
-<script src="${ctxPath}/static/reception/js/main.js?v=1"></script></body></html>
+<script src="${ctxPath}/static/reception/js/main.js?v=1"></script>
+</body>
+</html>

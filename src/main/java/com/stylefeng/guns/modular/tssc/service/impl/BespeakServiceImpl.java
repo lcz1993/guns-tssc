@@ -1,5 +1,6 @@
 package com.stylefeng.guns.modular.tssc.service.impl;
 
+import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.modular.tssc.dao.BespeakDao;
 import com.stylefeng.guns.modular.tssc.entity.Bespeak;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,9 @@ public class BespeakServiceImpl implements IBespeakService {
 
     @Override
     public void insert(Bespeak serviceOrder) {
+        if(ToolUtil.isEmpty(serviceOrder.getId())){
+            serviceOrder.setId(ToolUtil.getUid());
+        }
         bespeakDao.insert(serviceOrder);
     }
 

@@ -1,0 +1,131 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>Ogilvy &amp; Mather Taiwan | 加入奧美</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+
+
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css?v=1">
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css?v=1">
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/job.css?v=2">
+
+    <style>
+        ::-webkit-input-placeholder { color: #222; opacity: 0.54; }
+    </style>
+</head>
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+
+<!--顶部导航开始-->
+@include("/tssc/include/head.html"){}
+<!--顶部导航结束-->
+
+
+<main class="mastbody">
+    <div class="mastbody-inner" style="height: 900px;">
+
+        <div data-section="career" class="section on" style="display: block; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);">
+            <section data-mainpage="detail" class="mainpage">
+
+                <section data-subpage="jobdetail" class="subpage on">
+                    <div class="page-body">
+                        <div class="row-main">
+                            <div class="header">
+                                <h2 class="jobPcTitle clr-red">公开招聘</h2>
+                            </div>
+                            <div class="content" data-autosize="">
+                                <div class="content-inner jobPcTitleText">
+                                    我们不仅找有一样信念的人，还要认真对待他们。
+                                </div>
+                            </div>
+                        </div><!--/.row-main-job-->
+
+                        <div>
+
+                            <table cellspacing="0" id="DetailsView1" style="border-collapse:collapse;">
+                                <tbody><tr>
+                                    <td>&nbsp;</td><td>
+                                    <div class="jobCont">
+                                        <div class="jobStatusBar">
+                                            <p class="underLine clr-red">${company.name}</p>
+                                            <p class="clr-red">${recruit.category} /  ${recruit.nature}</p>
+                                            <img class="jobStatusBarSha" src="${ctxPath}/static/reception/img/shadow_0.png">
+                                        </div>
+                                        <div class="detailContent" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 922px;">
+
+                                            <div class="jspContainer" style="width: 922px; height: 715px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 922px;"><ul class="jobDetailContList">
+                                                <li>
+                                                    <div class="detailListTitle">工作內容<img src="${ctxPath}/static/reception/img/jobDetailArr_B.png" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                                                    <div class="detailListCont" style="display: block;">
+                                                        <p>${recruit.content}</p>
+                                                        <br>
+                                                        <p>职务类别：${recruit.category}</p>
+
+                                                        <p>工作待遇：<span id="DetailsView1_salary">${recruit.treatment}</span></p>
+                                                        <p>工作性质：${recruit.nature}</p>
+                                                        <p>上班地点：${recruit.place}</p>
+                                                        <p>需求人数：${recruit.number}</p>
+                                                        <p><span id="DetailsView1_Whether_busi_trip">出差外派：无需外派出差</span></p>
+                                                        <p>上班时段：<span id="DetailsView1_work_time">${recruit.interval}</span></p>
+                                                        <p><span id="DetailsView1_leave_system">休假制度：${recruit.vacation}</span></p>
+                                                        <p>上班日期：<span id="DetailsView1_onboard_date">${recruit.working}</span></p>
+                                                        <div class="bottomLine"></div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="detailListTitle">条件要求<img src="${ctxPath}/static/reception/img/jobDetailArr_B.png" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                                                    <div class="detailListCont" style="display: block;">
+                                                        <p>${recruit.condition}</p>
+                                                        <div class="bottomLine"></div>
+                                                    </div>
+                                                </li>
+                                            </ul></div></div></div>
+
+
+                                    </div>
+                                </td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <div class="redstripe"></div>
+            </section><!--/[data-mainpage]-->
+        </div><!--/[data-section]-->
+
+
+        <a class="btn-close back" href="${ctxPath}/tssc/recruit" title="回前页"><i class="icn icn-close"></i></a></div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+<!--顶部导航开始-->
+@include("/tssc/include/foot.html"){}
+<!--顶部导航结束-->
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js?v=1"></script></body></html>

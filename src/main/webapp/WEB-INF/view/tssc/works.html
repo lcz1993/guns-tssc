@@ -18,18 +18,64 @@
     <meta property="article:publisher" content="">
     <meta property="article:author" content="">
     <!-- Page info metas end-->
-
-
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
     <!-- Initial header classname -->
     <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css" />
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css" />
+    <!-- 全局css -->
+    <!--<link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">-->
+    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/validate/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/_fstyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/ztree/zTreeStyle.css" rel="stylesheet">
+    <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
+    <!-- 全局js -->
+    <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${ctxPath}/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/bootstrapValidator.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/validate/zh_CN.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/js/jquery.treegrid.bootstrap3.js"></script>
+    <script src="${ctxPath}/static/js/plugins/jquery-treegrid/extension/jquery.treegrid.extension.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/layer.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="${ctxPath}/static/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="${ctxPath}/static/js/plugins/webuploader/webuploader.min.js"></script>
+    <script src="${ctxPath}/static/js/common/ajax-object.js"></script>
+    <script src="${ctxPath}/static/js/common/bootstrap-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/tree-table-object.js"></script>
+    <script src="${ctxPath}/static/js/common/web-upload-object.js"></script>
+    <script src="${ctxPath}/static/js/common/ztree-object.js"></script>
+    <script src="${ctxPath}/static/js/common/Feng.js"></script>
 
-    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
-    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css?v=2" />
-    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css">
+
+    <script type="text/javascript">
+        Feng.addCtx("${ctxPath}");
+        Feng.sessionTimeoutRegistry();
+    </script>
+    <style>
+        a{
+            color: #000;
+        }
+        a:hover{
+            color: #000;
+        }
+    </style>
 </head>
 
 
-<body ontouchstart="">
+<body ontouchstart=""  style="background-color: #AAA">
 
 <div id="loader"><div class="spinner"></div></div>
 <!--顶部导航开始-->
@@ -100,7 +146,7 @@
                                                 <div class="heading ff-loud">
                                                     <h4 class="title">${product.name}</h4>
                                                 </div>
-                                                <img class="pic" src="${ctxPath}/product/"+{product.boundary}>
+                                                <img class="pic" src="${ctxPath}/tssc/product/{product.boundary}">
                                             </a>
                                         </li>
                                         @}
@@ -140,10 +186,10 @@
                                 </div>
                             </div>
                             <div class="footer">
-                                <p class="meta clr-red" id="product_team">团队： <span></span><a class="term" href="${ctxPath}/studio?">
-                                    <img class="companylogo" id="studio_logo" src="${ctxPath}/studio/{product.studio.logo}" alt="" /></a> </p>
+                                <p class="meta clr-red" id="product_team">团队： <a class="term" href="${ctxPath}/tssc/about#/about-group"><span></span>
+                                    </a><img class="companylogo" id="studio_logo" src="${ctxPath}/tssc/studio/{product.studio.logo}" alt="" /> </p>
                             </div>
-                            <a class="btn-close back" href="${ctxPath}/product" title="回前页"><i class="icn icn-close"></i></a>
+                            <a class="btn-close back" href="${ctxPath}/tssc/works#article" title="回前页"><i class="icn icn-close"></i></a>
                         </div>
                         <div class="row-side">
                             <div class="content" data-autosize="" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 1920px;">
@@ -209,7 +255,7 @@
         var a = $(event.target).parent().parent();
         var id = a.attr("data-articleid");
         $.ajax({
-            url:"${ctxPath}/product/detail",
+            url:"${ctxPath}/tssc/product/detail",
             type:"post",
             data:{id:id},
             dataType:"json",
@@ -233,15 +279,15 @@
                 $("#studio_name").text(genreName);
                 $("#product_introduce").html(introduce);
                 $("#studio_logo").attr("src",studio.logo);
+                $("#product_team a span").text(studio.name);
                 $("#works").attr("style","display: block; opacity: 1; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);");
-
                 var li = "";
                 var div = "";
                 for(var i = 0; i < image.length ; i++){
                     if(i == 0){
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
                         div += '<div class="item  active">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/tssc/product/"'+image[i]+' width="608px" height="308px" alt="...">';
                         div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
@@ -249,7 +295,7 @@
                     }else{
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
                         div += '<div class="item">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/tssc/product/"'+image[i]+' width="608px" height="308px" alt="...">';
                         div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';

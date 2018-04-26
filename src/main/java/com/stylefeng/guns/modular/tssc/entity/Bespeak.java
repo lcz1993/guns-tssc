@@ -4,20 +4,61 @@ import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
+
+/**
+ * 服务预约
+ * @author lcz
+ */
 @TableName(value = "service_order")
 public class Bespeak extends Model<Bespeak>{
     private static final long serialVersionUID = 1L;
+    /**
+     * 唯一主键
+     */
     private String id;
+    /**
+     * 姓名
+     */
     private String name;
+    /**
+     * 职称
+     */
     private String title;
+    /**
+     * 电子邮件
+     */
     private String email;
+    /**
+     * 电话
+     */
     private String tel;
+    /**
+     * 公司名称
+     */
     private String companyName;
+    /**
+     * 公司网址
+     */
     private String companyWeb;
+    /**
+     *预算
+     */
     private String budget;
+    /**
+     *品牌
+     */
     private String brand;
+    /**
+     *服务项目
+     */
     private String service;
+    /**
+     *备注
+     */
     private String remark;
+    /**
+     * 是否受理
+     */
     private String isaccept;
 
     public Bespeak() {

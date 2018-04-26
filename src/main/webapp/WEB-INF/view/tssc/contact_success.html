@@ -1,0 +1,137 @@
+<html class="header-pc lang-ch"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+    <title>服务预约</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Page info metas start-->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="">
+    <meta property="article:author" content="">
+    <!-- Page info metas end-->
+
+    <!-- Initial header classname -->
+    <script>!!(window.innerWidth <= 960) && (document.documentElement.className = document.documentElement.className.replace('header-pc', 'header-mb'));</script>
+
+
+    <link rel="shortcut icon" href="${ctxPath}/static/reception/img/logo.png"/>
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/main.css?v=1">
+    <link rel="stylesheet" href="${ctxPath}/static/reception/css/indexom.css">
+    <style>
+        ::-webkit-input-placeholder { color: #222; opacity: 0.54; }
+    </style>
+</head>
+
+<body ontouchstart="">
+
+<div id="loader"><div class="spinner"></div></div>
+
+<!--顶部导航开始-->
+@include("/tssc/include/head.html"){}
+<!--顶部导航结束-->
+
+<main class="mastbody">
+    <div class="mastbody-inner">
+
+        <!--************************
+                #/inquiry
+            ************************-->
+
+
+        <div data-section="inquiry" class="section">
+            <section data-mainpage="detail" class="mainpage">
+
+                <!-- 服務洽詢 -->
+                <section data-subpage="form" class="subpage">
+                    <div class="page-body inquiry-form">
+
+                        <div class="row-main">
+                            <div class="header">
+                                <h2 class="maintitle clr-red">服务洽谈</h2>
+                            </div>
+                            <div class="content">
+                                <div class="content-inner">
+                                    如果您在寻求腾盛时创的相关业务服务，<br>
+                                    请填写下方的表格，我们会尽快回复给您。<br>
+                                    或可拨打 <span class="clr-red fs-lg-4 ff-loud">0354-3088222</span>
+                                </div>
+                            </div>
+                        </div><!--/.row-main-->
+
+                        <div class="row-side">
+                            <div class="content" data-scrollpane="" data-autosize="">
+                                <div class="content-mask">
+                                    <div class="content-outer">
+                                        <div class="content-inner">
+
+                                            <!-- 表單 -->
+                                                <div class="row-form">
+                                                    <!-- 送出結果頁 -->
+                                                    <div class="">
+                                                        <div class="message">
+                                                            <p>
+                                                                <span class="clr-red fs-lg-5">资料已送出成功！</span><br>
+                                                                我们会尽快回复给您。<span id="spanId">5</span>秒后自动<a style="text-decoration: underline;" href="${ctxPath}/tssc/contact">返回</a>。
+                                                            </p>
+                                                        </div>
+                                                    </div><!--/.result-->
+                                                </div>
+
+
+
+
+
+                                        </div><!--/.content-inner-->
+                                    </div><!--/.content-outer-->
+                                </div><!--/.content-mask-->
+                            </div><!--/.content-->
+                        </div><!--/.row-side-->
+                    </div><!--/.inquiry-form-->
+                </section><!--/[data-subpage]-->
+
+                <div class="redstripe"></div>
+            </section><!--/[data-mainpage]-->
+        </div><!--/[data-section]-->
+
+
+
+    </div><!--/.mastbody-inner-->
+</main><!--/.mastbody-->
+
+
+
+<!--顶部导航开始-->
+@include("/tssc/include/foot.html"){}
+<!--顶部导航结束-->
+
+
+<script src="${ctxPath}/static/reception/js/libs/jquery.js"></script>
+<script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
+<script src="${ctxPath}/static/reception/js/main.js?v=1"></script>
+<script>
+    var x = 5;
+    function run(){
+        var span = document.getElementById("spanId");
+        x--;
+        if(x == 0){
+            window.location.href="${ctxPath}/tssc/contact";
+        }
+        span.innerHTML = x;
+    }
+    function timer(){
+        window.setInterval("run()",1000);
+    }
+    $(function () {
+        timer();
+    })
+</script>
+</body>
+</html>

@@ -4,11 +4,24 @@ import com.baomidou.mybatisplus.activerecord.Model;
 
 import java.io.Serializable;
 
+/**
+ * 业务类别表
+ * @author
+ */
 public class Genre extends Model<Genre>{
 
     private static final long serialVersionUID = 1L;
+    /**
+     * 唯一主键
+     */
     private String id;
+    /**
+     * 名称
+     */
     private String name;
+    /**
+     * 备注
+     */
     private String remark;
 
     public Genre() {
