@@ -189,27 +189,6 @@ public class TsscController extends BaseController {
      * @author stylefeng
      * @Date 2017/5/24 23:00
      */
-    @RequestMapping("/{pictureId}")
-    public void renderPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"tssc\\\\"+ pictureId + ".jpg";
-        try {
-            byte[] bytes = FileUtil.toByteArray(path);
-            response.getOutputStream().write(bytes);
-        }catch (Exception e){
-            //如果找不到图片就返回一个默认图片
-            try {
-                response.sendRedirect("/static/img/noLogo.png");
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        }
-    }
-    /**
-     * 返回图片
-     *
-     * @author stylefeng
-     * @Date 2017/5/24 23:00
-     */
     @RequestMapping("/studio/{pictureId}")
     public void renderStudioPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
         String path = gunsProperties.getFileUploadPath() +"studio\\\\"+ pictureId + ".jpg";

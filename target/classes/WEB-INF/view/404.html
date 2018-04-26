@@ -30,13 +30,30 @@
                 </div>
                 <button type="submit" class="btn btn-primary">搜索</button>
             </form>
+            <span id="spanId">5</span>秒后自动<a style="text-decoration: underline;" href="${ctxPath}/tssc/contact">返回</a>。
         </div>
     </div>
 
     <!-- 全局js -->
     <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
     <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
-
+    <script>
+        var x = 5;
+        function run(){
+            var span = document.getElementById("spanId");
+            x--;
+            if(x <= 0){
+                window.location.href="${ctxPath}/tssc/";
+            }
+            span.innerHTML = x;
+        }
+        function timer(){
+            window.setInterval("run()",1000);
+        }
+        $(function () {
+            timer();
+        })
+    </script>
 </body>
 
 </html>
