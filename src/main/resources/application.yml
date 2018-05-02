@@ -7,13 +7,13 @@ guns:
   swagger-open: true #是否开启swagger (true/false)
   kaptcha-open: false #是否开启登录时验证码 (true/false)
   session-open: false #是否开启session验证 (true/false)
-  file-upload-path: C:\\file\\image\\  #文件上传目录(不配置的话为java.io.tmpdir目录)
+  file-upload-path: /Users/a1/guns/image/ #文件上传目录(不配置的话为java.io.tmpdir目录)
   session-invalidate-time: 1800 #session失效时间 单位：秒
   session-validation-interval: 900 #多久检测一次失效的session 单位：秒
 
 ###################  项目启动端口  ###################
 server:
-  port: 80
+  port: 8080
 
 ###################  beetl配置  ###################
 beetl:
@@ -31,6 +31,7 @@ spring:
     static-path-pattern: /static/**
     view:
       prefix: /WEB-INF/view
+      suffix: .html
   http:
     converters:
       preferred-json-mapper: fastjson
@@ -50,9 +51,6 @@ mybatis-plus:
     multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
 
-ckeditor:
-  storage.image.path : C:\\file\\image\\images\\
-  access.image.url : http://localhost:80/public/image/
 ---
 
 ##########################################################

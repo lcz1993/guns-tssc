@@ -5,14 +5,35 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author lcz
+ */
 @TableName(value = "news_straw")
 public class News extends Model<News>{
     private static final long serialVersionUID = 1L;
+    /**
+     *唯一主键
+     */
     private String id;
+    /**
+     *名称
+     */
     private String name;
+    /**
+     *时间
+     */
     private Date time;
+    /**
+     *简介
+     */
     private String synopsis;
+    /**
+     *内容
+     */
     private String content;
+    /**
+     *图片
+     */
     private String image;
 
     public News() {

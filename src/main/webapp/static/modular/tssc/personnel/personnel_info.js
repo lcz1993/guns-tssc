@@ -60,7 +60,7 @@ PersonnelInfoDlg.close = function() {
  * 收集数据
  */
 PersonnelInfoDlg.collectData = function() {
-    this.set('id').set("name").set("engName");
+    this.set('id').set("name").set("engName").set("introduce").set("position").set("image");
 }
 
 /**
@@ -74,12 +74,12 @@ PersonnelInfoDlg.addSubmit = function() {
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/personnel/add", function(data){
         Feng.success("添加成功!");
+        window.parent.location.reload();
         // window.parent.Personnel.table.refresh();
         PersonnelInfoDlg.close();
     },function(data){
         Feng.error("添加失败!" + data.responseJSON.message + "!");
     });
-    window.parent.location.reload();
     ajax.set(this.personnelInfoData);
     ajax.start();
 }
@@ -95,7 +95,8 @@ PersonnelInfoDlg.editSubmit = function() {
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/personnel/update", function(data){
         Feng.success("修改成功!");
-        window.parent.Personnel.table.refresh();
+        // window.parent.Personnel.table.refresh();
+        window.parent.location.reload();
         PersonnelInfoDlg.close();
     },function(data){
         Feng.error("修改失败!" + data.responseJSON.message + "!");

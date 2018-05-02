@@ -7,18 +7,50 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author lcz
+ * 产品基础类
+ */
 @TableName("product")
 public class Product extends Model<Product> {
 
     private static final long serialVersionUID = 1L;
+    /**
+     *唯一主键
+     */
     private String id;
+    /**
+     *名称
+     */
     private String name;
+    /**
+     *类别ID
+     */
     private String genreId;
+    /**
+     *年份
+     */
     private String year;
+    /**
+     *团队ID
+     */
     private String teamId;
+    /**
+     *客户
+     */
     private String customer;
+    /**
+     *内容
+     */
     private String introduce;
+    /**
+     *图片
+     */
     private String image;
+    /**
+     *封面图片
+     */
     private String boundary;
 
     //表示排除类中的属性.

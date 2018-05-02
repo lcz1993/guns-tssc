@@ -29,4 +29,19 @@ public interface IPersonnelService {
      * @param personnel
      */
     void insert(Personnel personnel);
+
+    /**
+     * 删除人员
+     * @param id
+     * @return
+     */
+    int delete(String id);
+
+    /**
+     * 根据ID获取实体
+     * @param id
+     * @return
+     */
+    Personnel get(String id);
+    Personnel get(Personnel personnel);
 }

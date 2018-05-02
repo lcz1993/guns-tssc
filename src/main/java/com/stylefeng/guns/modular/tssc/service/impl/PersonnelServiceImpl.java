@@ -41,4 +41,19 @@ public class PersonnelServiceImpl implements IPersonnelService {
     public void insert(Personnel personnel) {
         personnelDao.insert(personnel);
     }
+
+    @Override
+    public int delete(String id) {
+        return personnelDao.deleteById(id);
+    }
+
+    @Override
+    public Personnel get(String id) {
+        return personnelDao.selectById(id);
+    }
+
+    @Override
+    public Personnel get(Personnel personnel) {
+        return personnelDao.selectById(personnel.getId());
+    }
 }

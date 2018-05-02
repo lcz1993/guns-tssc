@@ -1,17 +1,37 @@
 @layout("/common/_container.html"){
 <div class="ibox float-e-margins">
     <div class="ibox-content">
-        <div class="form-horizontal">
+        <div class="form-horizontal"  id="PersonnelInfoForm">
 
             <input type="hidden" id="id" value="${personnel.id}">
 
             <div class="row">
-                <div class="col-sm-6 b-r">
-
+                <#input id="name" name="名称" value="${personnel.name}" underline="false"/>
+                <#input id="engName" name="英文名称名称" value="${personnel.engName}" underline="false"/>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">职位</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="position" name="position">${personnel.position}</textarea>
+                        <span style="color: red">多个职位间以逗号隔开。</span>
+                    </div>
                 </div>
-
-                <div class="col-sm-6">
-
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">介绍</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="introduce" name="introduce">${personnel.introduce}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label head-scu-label">照片</label>
+                    <div class="col-sm-4">
+                        <span id="imagePreId">${personnel.image}</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="imageBtnId"><div class="webuploader-pick"></div>
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="image" value="image">
                 </div>
             </div>
 

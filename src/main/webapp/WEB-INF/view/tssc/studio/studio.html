@@ -78,18 +78,25 @@
                         <input type="hidden" value="" id="company_id">
                         <div class="header" id="company_name">
 
-                            <h1 class="maintitle"></h1><a onclick="editName('company_name')">编辑</a>
+                            <h1 class="maintitle">${company.name}</h1><a onclick="editName('company_name')">编辑</a>
                         </div>
 
                         <div class="content">
                             <div class="content-inner">
                                 <div class="descr"  id="company_introduction">
-                                    <p></p><a onclick="editIntroduction('company_introduction')">编辑</a>
+                                    <p>${company.introduction}</p><a onclick="editIntroduction('company_introduction')">编辑</a>
                                 </div>
                                 <#button name="添加工作室" icon="fa-plus" clickFun="Studio.openAddStudio()"/>
                                 <ul class="companylist" id="studio_list" style="margin-top: 18px;">
                                     <!--工作室列表-->
-
+                                    @for(studio in studioList){
+                                    <li style="margin-top: 5px;"><input type="hidden" value="${studio.id}">
+                                        <button type="button" class="btn btn-info" style="height: 28px;margin-right: 5px;float: left;" onclick="delStudio(event);">删除</button>
+                                        <button type="button" class="btn btn-info" style="height: 28px;margin-right: 5px;float: left;" onclick="Studio.openStudioDetail('${studio.id}');">编辑</button>
+                                        <a data-ga-event="about-group-${studio.id}" href="#/about-group/${studio.id}">
+                                            <img class="companylogo" src="${ctxPath}/studio/image/${studio.logo}" style="height: 35px;"/>
+                                            ${studio.name}<i class="icn icn-inline icn-angle-right"></i></a></li>
+                                    @}
                                 </ul>
                             </div>
                             <!--/.content-inner-->
@@ -101,6 +108,42 @@
                 <!--/.page-body-->
             </section>
             <section data-mainpage="detail" class="mainpage" id="studio_section">
+                @for(studio in studioList){
+                <section data-subpage="${studio.id}" class="subpage">
+                    <div class="page-body about-group-detail about-ad">
+                        <div class="row-main">
+                            <div class="header">
+                                <h2 class="maintitle companytitle clr-red"><img class="companylogo" src="${ctxPath}/studio/image/${studio.logo}" />${studio.name}</h2>
+                            </div>
+                            <div class="content" data-scrollpane="" data-autosize="">
+                                <div class="content-inner">
+                                    <div class="descr htmledit">
+                                        ${studio.synopsis}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <a class="link-black ff-loud" data-ga-event="about-group-ad-inquiry" href="${ctxPath}/bespeak">服务洽谈<i class="icn icn-inline icn-angle-right"></i></a>
+                            </div>
+                            <a class="btn-close back" href="#/about-group" title="回前页"><i class="icn icn-close"></i></a>
+                        </div>
+                        <div class="row-side">
+                            <div class="content" data-autosize="">
+                                <div class="content-mask">
+                                    <div class="content-outer">
+                                        <div class="content-inner">
+                                            <!-- 公司有上图时，注意class="pic" -->
+                                            <img class="pic" data-centered="" src="${ctxPath}/studio/image/${studio.image}" />
+                                            <!-- 公司沒有图时，注意class="effect" -->
+                                            <!--<img class="effect" data-centered src="">-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @}
                 <!--工作室名称-->
                 <div class="redstripe"></div>
             </section>
@@ -130,18 +173,14 @@
 <script src="${ctxPath}/static/reception/js/libs/plugins.js"></script>
 <script src="${ctxPath}/static/reception/js/main.js"></script>
 <script>
-    $(function () {
-        companyInit();
-        studioInit();
-
-    });
+    /**
+     * 删除工作室
+     */
     function delStudio(event) {
         layer.confirm("确认删除？",function () {
             var btn = $(event.target);
-            console.log(btn);
             var input = btn.prev();
             var id = input.val();
-            console.log(id);
             $.ajax({
                 url: "${ctxPath}/studio/delete?id=" + id,
                 type: "get",
@@ -150,7 +189,7 @@
                     result = result.data;
                     if(result == "ok"){
                         Feng.success("删除成功");
-                        setTimeout(window.location.reload(),800);
+                        window.location.reload();
                     }
                 },
                 fail:function () {
@@ -159,327 +198,6 @@
             });
         });
 
-    }
-    /**
-     * 简介编辑
-     */
-    function synopsisStudioEdit(event){
-        var btn = $(event.target);
-        var p = btn.parent();
-        p.text("");
-        var input = "";
-        input += '<textarea class="form-control" rows="3"></textarea>';
-        input += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="updateStudioSynopsis(event);">提交</button>';
-        var $input = $(input);
-        p.append($input);
-    }
-    /**
-     * 简介提交
-     */
-    function updateStudioSynopsis(event){
-        var btn = $(event.target);
-        var textarea = btn.prev();
-        var synopsis = textarea.val();
-        var first = textarea.parent().parent().children("input");
-        var id = first.val();
-        $.ajax({
-            url:"${ctxPath}/studio/update",
-            type:"post",
-            data:{param:"id="+id+"&synopsis="+synopsis},
-            dataType:"json",
-            success:function (result) {
-                result = result.data;
-                Feng.alert("提交成功", 1);
-                var span = btn.parent();
-                textarea.remove();
-                span.text(result.synopsis);
-                var i = "";
-                i += '';
-                i += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="synopsisStudioEdit(event);">编辑简介 </button>';
-                var $i = $(i);
-                span.append($i);
-            },
-            fail:function () {
-                Feng.alert("提交失败", 1);
-            }
-        });
-    }
-    /**
-     * 介绍编辑
-     */
-    function introduceStudioEdit(event){
-        var btn = $(event.target);
-        var p = btn.parent();
-        p.text("");
-        var input = "";
-        input += '<textarea class="form-control" rows="3"></textarea>';
-        input += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="updateStudioIntroduce(event);">提交</button>';
-        var $input = $(input);
-        p.append($input);
-    }
-    /**
-     * 介绍提交
-     */
-    function updateStudioIntroduce(event) {
-        var btn = $(event.target);
-        var textarea = btn.prev();
-        var introduce = textarea.val();
-        var first = textarea.parent().parent().children("input");
-        var id = first.val();
-        $.ajax({
-            url:"${ctxPath}/studio/update",
-            type:"post",
-            data:{param:"id="+id+"&introduce="+introduce},
-            dataType:"json",
-            success:function (result) {
-                result = result.data;
-                Feng.alert("提交成功", 1);
-                var span = btn.parent();
-                textarea.remove();
-                span.text(result.introduce);
-                var i = "";
-                i += '';
-                i += '<button type="button" class="btn btn-info" style="height: 28px;float: right;" onclick="introduceStudioEdit(event);">编辑介绍</button>';
-                var $i = $(i);
-                span.append($i);
-            },
-            fail:function () {
-                Feng.alert("提交失败", 1);
-            }
-        });
-    }
-
-    /**
-     *工作室初始化
-     */
-    function studioInit() {
-        $.ajax({
-            url:"${ctxPath}/studio/list",
-            type:"get",
-            dataType:"json",
-            success :function (result) {
-                result = result.data;
-                for(var i in result) {
-                    var studio = result[i];
-                    var id = studio.id;
-                    var name = studio.name;
-                    var synopsis = studio.synopsis;
-                    var introduce = studio.introduce;
-                    var logo = studio.logo;
-                    var image = studio.image;
-                    var founddate = studio.founddate;
-                    if(logo == ""){
-                        logo = "noLogo.png";
-                    }
-                    if(image == ""){
-                        image = "upImage.png";
-                    }
-                    var li = "";
-                    li += '<li style="margin-top: 5px;"><input type="hidden" value="'+id+'">' +
-                        '<button type="button" class="btn btn-info" style="height: 28px;margin-right: 5px;float: left;" onclick="delStudio(event);">删除</button>' +
-                        '<a data-ga-event="about-group-' + id + '" href="#/about-group/' + id + '">' +
-                        '<img class="companylogo" src="${ctxPath}/studio/' + logo + '" style="height: 35px;"/>' +
-                        name + '<i class="icn icn-inline icn-angle-right"></i></a></li>';
-                    var $li = $(li);
-                    $("#studio_list").append($li);
-
-                    var selection = "";
-                    selection += '<section data-subpage="' + id + '" class="subpage">';
-                    selection += '<div class="page-body about-group-detail about-' + id + '">';
-                    selection += '<div class="row-main">';
-                    selection += '<div class="header" style="height: 50px;">';
-                    selection += '<h2 class="maintitle companytitle clr-red"><input type="hidden" value="'+id+'">';
-                    selection += '<div class="form-group">';
-                    selection += '<div class="col-sm-6">';
-                    selection += '<div id="'+id+'logoPreId">';
-                    selection += '<div><img class="companylogo" src="${ctxPath}/studio/'+logo+'"/>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '<div class="" style="float: right;">';
-                    selection += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;margin-right: 5px;" onclick="sumbitLogo(event);">提交</button>';
-                    selection += '<div class="upload-btn" id="'+id+'logoBtnId"  style="float: right;">';
-                    selection += '<i></i>&nbsp;上传';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '<input type="hidden" id="'+id+'logo" value="'+logo+'"/>';
-                    selection += '</div>';
-                    selection += '<div style="margin-top: 40px;"><span id="name_div'+id+'" class="col-sm-6">'+name+'<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="nameStudioEdit(event);">编辑</button></span>';
-                    selection += '</div></h2></div>';
-                    selection += '<div class="content" data-scrollpane="" data-autosize="">';
-                    selection += '<div class="content-inner">';
-                    selection += '<div class="descr htmledit">';
-                    selection += '<input type="hidden" value="'+id+'">';
-                    selection += '<p class="lead">' + synopsis + '<button type="button" class="btn btn-info" style="height: 28px;float: right;" onclick="synopsisStudioEdit(event);">编辑简介</button></p><br><br>';
-                    selection += '<p>' + introduce + '<button type="button" class="btn btn-info" style="height: 28px;float: right;" onclick="introduceStudioEdit(event);">编辑介绍</button></p>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '<div class="footer">';
-                    selection += '<a class="link-black ff-loud" data-ga-event="about-group-ad-inquiry" href="${ctxPath}/contact/index">服务洽谈<i class="icn icn-inline icn-angle-right"></i></a>';
-                    selection += '</div>';
-                    selection += '<a class="btn-close back" href="#/about-group" title="回前頁"><i class="icn icn-close"></i></a>';
-                    selection += '</div>';
-                    selection += '<div class="row-side">';
-                    selection += '<div class="content" data-autosize="">';
-                    selection += '<div class="content-mask">';
-                    selection += '<div class="content-outer">';
-
-                    selection += '<div class="content-inner">';
-
-                    selection += '<div class="form-group">';
-                    selection += '<input type="hidden" value="'+id+'">';
-                    selection += '<div class="col-sm-12" style="position: absolute;bottom: 170px;">';
-                    selection += '<div id="'+id+'imagePreId">';
-                    selection += '<div><img class="pic" data-centered="" style="margin-top: 0;margin-left: 0" src="${ctxPath}/studio/' + image + '" />';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '<div class="" style="float: right;">';
-                    selection += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 32px;margin-right: 5px;" onclick="sumbitImg(event);">提交</button>';
-                    selection += '<div class="upload-btn " id="'+id+'imageBtnId"  style="float: right;">';
-                    selection += '<i></i>&nbsp;上传';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '<input type="hidden" id="'+id+'image" value="'+image+'"/>';
-                    selection += '</div>';
-
-
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</div>';
-                    selection += '</section>';
-                    var $selection = $(selection);
-                    $("#studio_section").append($selection);
-                    var url = '/studio/upload'
-                    var logo = new $WebUpload(id+"logo",url,true,40);
-                    logo.init();
-                    var image = new $WebUpload(id+"image",url,true,380);
-                    image.init();
-                }
-            },
-            fail:function () {
-                layer.alert("加载出错！");
-            }
-        });
-    }
-    /**
-     * 修改名称点击编辑
-     */
-    function nameStudioEdit(event) {
-        var btn = $(event.target);
-        var span = btn.parent();
-        span.text("");
-        var input = "";
-        input += '<input type="text" class="col-sm-9"/>';
-        input += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="updateStudioName(event);">提交</button>';
-        var $input = $(input);
-        span.append($input);
-    }
-    /**
-     * 提交名称编辑
-     */
-    function updateStudioName(event) {
-        var btn = $(event.target);
-        var input = btn.prev();
-        var name = input.val();
-        var h = $(event.target).parents("h2");
-        var first = h.children().first();
-        var id = first.val();
-        $.ajax({
-            url:"${ctxPath}/studio/update",
-            type:"post",
-            data:{param:"id="+id+"&name="+name},
-            dataType:"json",
-            success:function (result) {
-                result = result.data;
-                Feng.alert("提交成功", 1);
-                var span = btn.parent();
-                input.remove();
-                span.text(result.name);
-                var i = "";
-                i += '';
-                i += '<button type="button" class="btn btn-info" style="width: 66.188px;height: 28px;float: right;" onclick="nameStudioEdit(event);">编辑</button>';
-                var $i = $(i);
-                span.append($i);
-            },
-            fail:function () {
-                Feng.alert("提交失败", 1);
-            }
-        });
-    }
-    /**
-     * logo图片修改提交
-     */
-    function sumbitLogo(event) {
-        var h = $(event.target).parents("h2");
-        var first = h.children().first();
-        var id = first.val();
-        var imgInput = h.children(".form-group").children("#"+id+"logo");
-        var src = imgInput.val();
-        $.ajax({
-            url:"${ctxPath}/studio/update",
-            type:"post",
-            data:{param:"id="+id+"&logo="+src},
-            dataType:"json",
-            success:function (result) {
-                Feng.alert("提交成功", 1);
-            },
-            fail:function () {
-                Feng.alert("提交失败", 1);
-            }
-        });
-    }
-
-    /**
-     * 照片图片修改提交
-     */
-    function sumbitImg(event) {
-        var h = $(event.target).parents(".form-group");
-        var first = h.children().first();
-        var id = first.val();
-        var imgInput = h.children("#"+id+"image");
-        var src = imgInput.val();
-        $.ajax({
-            url:"${ctxPath}/studio/update",
-            type:"post",
-            data:{param:"id="+id+"&image="+src},
-            dataType:"json",
-            success:function (result) {
-                Feng.alert("提交成功", 1);
-            },
-            fail:function () {
-                Feng.alert("提交失败", 1);
-            }
-        });
-    }
-
-    /**
-     * 公司简介初始化
-     */
-    function companyInit(){
-        $.ajax({
-            url:"${ctxPath}/company/get",
-            type:"get",
-            data:"",
-            dataType:"json",
-            success :function (result) {
-                result = result.data;
-                var id = result.id;
-                $("#company_id").text(id);
-                var name = result.name;
-                $("#company_name h1").text(name);
-                var introduction = result.introduction;
-                $("#company_introduction p").text(introduction);
-            },
-            fail:function () {
-                $("#company_name h1").text("腾盛时创");
-                $("#company_introduction p").text("山西腾盛时创文化传媒有限公司于2017年由宋艺所创立。");
-            }
-        });
     }
 
     /**

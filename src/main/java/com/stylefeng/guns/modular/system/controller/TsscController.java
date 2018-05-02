@@ -315,7 +315,7 @@ public class TsscController extends BaseController {
     /**
      * 新闻详情
      */
-    @RequestMapping(value = "/recruit")
+    @RequestMapping(value = "/recruits")
     public String recruit(HttpServletRequest request,HttpServletResponse response, Model model) {
         List<Recruit> recruitList = iRecruitService.findList(new Recruit());
         model.addAttribute("recruitList",recruitList);

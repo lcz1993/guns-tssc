@@ -6,21 +6,73 @@
             <input type="hidden" id="id" value="${studio.id}">
 
             <div class="row">
-                <div class="col-sm-6 b-r">
-
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">名称</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="name" name="name" value="${studio.name}">
+                    </div>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">成立时间</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="founddate" value="${studio.founddate}" name="founddate" onclick="laydate({istime: false, format: 'YYYY-MM-DD'})">
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">简介</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="synopsis" name="synopsis">${studio.synopsis}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">详细介绍</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="introduce" name="introduce">${studio.introduce}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label head-scu-label">LOGO</label>
+                    <div class="col-sm-4">
+                        <span id="logoPreId">${studio.logo}</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="logoBtnId"><div class="webuploader-pick"></div>
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="logo" name="logo" value="${studio.logo}">
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label head-scu-label">图片</label>
+                    <div class="col-sm-4">
+                        <span id="imagePreId"></span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="imageBtnId"><div class="webuploader-pick"></div>
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="image" value="${studio.image}" name="image">
                 </div>
             </div>
 
             <div class="row btn-group-m-t">
                 <div class="col-sm-10">
-                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="StudioInfoDlg.editSubmit()"/>
-                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="StudioInfoDlg.close()"/>
+                    <button type="button" class="btn btn-primary " id="ensure" onclick="StudioInfoDlg.editSubmit()">
+                        <i class="fa fa-check"></i>&nbsp;提交
+                    </button>
+                    <button type="button" class="btn btn-danger " onclick="StudioInfoDlg.close()" id="cancel">
+                        <i class="fa fa-eraser"></i>&nbsp;取消
+                    </button>
                 </div>
             </div>
+
         </div>
 
     </div>

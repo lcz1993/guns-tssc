@@ -326,17 +326,16 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping(method = RequestMethod.POST, path = "/upload")
     @ResponseBody
-    public String upload(@RequestPart("file") MultipartFile picture) {
+    public String upload(@RequestPart("file") MultipartFile picture) throws IOException {
         String pictureName = UUID.randomUUID().toString() + ".jpg";
-        String fileSavePath = gunsProperties.getFileUploadPath();
-        String location = "\\\\mgr";
+        String fileSavePath = gunsProperties.getFileUploadPath() + "mgr/";
         try {
             picture.transferTo(new File(fileSavePath + pictureName));
         } catch (Exception e) {
-            File file = new File(fileSavePath +location);
+            File file = new File(fileSavePath);
             file.mkdirs();
             try {
-                picture.transferTo(new File(fileSavePath +location+ pictureName));
+                picture.transferTo(new File(fileSavePath + pictureName));
             } catch (IOException e1) {
                 throw new BussinessException(BizExceptionEnum.UPLOAD_ERROR);
             }

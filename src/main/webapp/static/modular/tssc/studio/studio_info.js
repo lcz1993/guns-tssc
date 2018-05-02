@@ -7,45 +7,10 @@ var StudioInfoDlg = {
         name: {
             validators: {
                 notEmpty: {
-                    message: '工作室名称不能为空'
+                    message: '账户不能为空'
                 }
             }
-        },
-        founddate: {
-            validators: {
-                notEmpty: {
-                    message: '成立时间不能为空'
-                }
-            }
-        },
-        // synopsis: {
-        //     validators: {
-        //         notEmpty: {
-        //             message: '简介不能为空'
-        //         }
-        //     }
-        // },
-        // introduce: {
-        //     validators: {
-        //         notEmpty: {
-        //             message: '详细介绍不能为空'
-        //         }
-        //     }
-        // },
-        // logo: {
-        //     validators: {
-        //         notEmpty: {
-        //             message: '请上传LOGO'
-        //         }
-        //     }
-        // },
-        // image: {
-        //     validators: {
-        //         notEmpty: {
-        //             message: '请上传照片'
-        //         }
-        //     }
-        // }
+        }
     }
 };
 
@@ -92,7 +57,7 @@ StudioInfoDlg.collectData = function() {
     // var introduce = CKEDITOR.instances.introduce.getData();
     // this.studioInfoData.introduce = introduce;
     // this.studioInfoData.synopsis = synopsis;
-    this.set('id').set('name').set('founddate').set('logo').set('image');
+    this.set('id').set('name').set('founddate').set('logo').set('image').set("synopsis").set("introduce");
 }
 
 /**
@@ -112,18 +77,19 @@ StudioInfoDlg.addSubmit = function() {
     this.clearData();
     this.collectData();
 
-    if (!this.validate()) {
-        return;
-    }
+    // if (!this.validate()) {
+    //     return;
+    // }
 
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/studio/add", function(data){
         Feng.success("添加成功!");
+        window.parent.location.reload();
         StudioInfoDlg.close();
     },function(data){
         Feng.error("添加失败!" + data.responseJSON.message + "!");
     });
-    window.parent.location.reload();
+    // window.parent.location.reload();
     ajax.set(this.studioInfoData);
     ajax.start();
 }
@@ -136,13 +102,13 @@ StudioInfoDlg.editSubmit = function() {
     this.clearData();
     this.collectData();
 
-    if (!this.validate()) {
-        return;
-    }
+    // if (!this.validate()) {
+    //     return;
+    // }
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/studio/update", function(data){
         Feng.success("修改成功!");
-        window.parent.Studio.table.refresh();
+        window.parent.location.reload();
         StudioInfoDlg.close();
     },function(data){
         Feng.error("修改失败!" + data.responseJSON.message + "!");

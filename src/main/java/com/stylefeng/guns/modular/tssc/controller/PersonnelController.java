@@ -8,8 +8,11 @@ import com.stylefeng.guns.config.properties.GunsProperties;
 import com.stylefeng.guns.core.util.FileUtil;
 import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.modular.system.util.JsonResult;
+import com.stylefeng.guns.modular.tssc.entity.Company;
 import com.stylefeng.guns.modular.tssc.entity.Personnel;
+import com.stylefeng.guns.modular.tssc.service.ICompanyService;
 import com.stylefeng.guns.modular.tssc.service.IPersonnelService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,12 +44,29 @@ public class PersonnelController extends BaseController {
     @Resource
     private IPersonnelService iPersonnelService;
     @Resource
+    private ICompanyService iCompanyService;
+    @Resource
     private GunsProperties gunsProperties;
     /**
      * 跳转到人员首页
      */
     @RequestMapping("")
-    public String index() {
+    public String index(Model model) {
+        //公司本身
+        Company company = iCompanyService.findCompany();
+        model.addAttribute("company",company);
+        //人员
+        Personnel personnel = new Personnel();
+        List<Personnel> personnelList = iPersonnelService.findList(personnel);
+        for (Personnel p:personnelList) {
+            List<String> list = new ArrayList<String>();
+            String[] strings = p.getPosition().split(",");
+            for (String s:strings) {
+                list.add(s);
+            }
+            p.setPositionList(list);
+        }
+        model.addAttribute("personnelList",personnelList);
         return PREFIX + "personnel.html";
     }
 
@@ -61,7 +82,8 @@ public class PersonnelController extends BaseController {
      * 跳转到修改人员
      */
     @RequestMapping("/personnel_update/{personnelId}")
-    public String personnelUpdate(@PathVariable Integer personnelId, Model model) {
+    public String personnelUpdate(@PathVariable String personnelId, Model model) {
+        model.addAttribute("personnel",iPersonnelService.get(personnelId));
         return PREFIX + "personnel_edit.html";
     }
 
@@ -89,7 +111,9 @@ public class PersonnelController extends BaseController {
         if(ToolUtil.isEmpty(personnel.getId())){
             personnel.setId(ToolUtil.getUid());
         }
-        personnel.setPosition("职员");
+        if(ToolUtil.isEmpty(personnel.getPosition())){
+            personnel.setPosition("职员");
+        }
         iPersonnelService.insert(personnel);
         return super.SUCCESS_TIP;
     }
@@ -97,10 +121,11 @@ public class PersonnelController extends BaseController {
     /**
      * 删除人员
      */
-    @RequestMapping(value = "/delete")
     @ResponseBody
-    public Object delete() {
-        return SUCCESS_TIP;
+    @RequestMapping(value = "/delete")
+    public JsonResult delete(String id) {
+        iPersonnelService.delete(id);
+        return new JsonResult("ok");
     }
 
 
@@ -109,32 +134,9 @@ public class PersonnelController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public JsonResult update(@Param("param") String param) {
-        String[] strings = param.split("&|=");
-        Personnel personnel = new Personnel();
-        for (int i = 0; i<strings.length;i+=2) {
-            String str = strings[i];
-            if (str.equals("id")){
-                personnel.setId(strings[i+1]);
-            }
-            if(str.equals("name")){
-                personnel.setName(strings[i+1]);
-            }
-            if(str.equals("engName")){
-                personnel.setEngName(strings[i+1]);
-            }
-            if (str.equals("position")){
-                personnel.setPosition(strings[i+1]);
-            }
-            if (str.equals("introduce")){
-                personnel.setIntroduce(strings[i+1]);
-            }
-            if (str.equals("image")){
-                personnel.setImage(strings[i+1]);
-            }
-        }
+    public Tip update(Personnel personnel) {
         iPersonnelService.update(personnel);
-        return new JsonResult("ok");
+        return super.SUCCESS_TIP;
     }
 
     /**
@@ -153,15 +155,14 @@ public class PersonnelController extends BaseController {
     @ResponseBody
     public String upload(@RequestPart("file") MultipartFile picture){
         String pictureName = UUID.randomUUID().toString() + ".jpg";
-        String fileSavePath = gunsProperties.getFileUploadPath();
-        String location = "personnel\\\\";
+        String fileSavePath = gunsProperties.getFileUploadPath() + "personnel/";
         try {
-            picture.transferTo(new File(fileSavePath +location+ pictureName));
+            picture.transferTo(new File(fileSavePath + pictureName));
         } catch (Exception e) {
-            File file = new File(fileSavePath +location);
+            File file = new File(fileSavePath );
             file.mkdirs();
             try {
-                picture.transferTo(new File(fileSavePath +location+ pictureName));
+                picture.transferTo(new File(fileSavePath + pictureName));
             } catch (IOException e1) {
                 throw new BussinessException(BizExceptionEnum.UPLOAD_ERROR);
             }
@@ -174,9 +175,9 @@ public class PersonnelController extends BaseController {
      * @author stylefeng
      * @Date 2017/5/24 23:00
      */
-    @RequestMapping("/{pictureId}")
+    @RequestMapping("/image/{pictureId}")
     public void renderPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"personnel\\\\"+ pictureId + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"personnel/"+ pictureId + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);

@@ -19,6 +19,7 @@ import com.stylefeng.guns.modular.system.transfer.UserDto;
 import com.stylefeng.guns.modular.system.util.JsonResult;
 import com.stylefeng.guns.modular.system.warpper.RoleWarpper;
 import com.stylefeng.guns.modular.tssc.entity.Studio;
+import com.stylefeng.guns.modular.tssc.service.ICompanyService;
 import com.stylefeng.guns.modular.tssc.service.IStudioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
@@ -50,13 +52,17 @@ public class StudioController extends BaseController {
     private String PREFIX = "/tssc/studio/";
     @Autowired
     private IStudioService iStudioService;
+    @Autowired
+    private ICompanyService iCompanyService;
     @Resource
     private GunsProperties gunsProperties;
     /**
      * 跳转到工作室首页
      */
     @RequestMapping("")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("company",iCompanyService.findCompany());
+        model.addAttribute("studioList",iStudioService.findList(new Studio()));
         return PREFIX + "studio.html";
     }
 
@@ -72,7 +78,8 @@ public class StudioController extends BaseController {
      * 跳转到修改工作室
      */
     @RequestMapping("/studio_update/{studioId}")
-    public String studioUpdate(@PathVariable Integer studioId, Model model) {
+    public String studioUpdate(@PathVariable String studioId, Model model) {
+        model.addAttribute("studio",iStudioService.get(studioId));
         return PREFIX + "studio_edit.html";
     }
 
@@ -90,7 +97,7 @@ public class StudioController extends BaseController {
     /**
      * 新增工作室
      */
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Tip add(@Valid Studio studio, BindingResult result) {
         if (result.hasErrors()) {
@@ -130,35 +137,9 @@ public class StudioController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public JsonResult update(String param) {
-        String[] strings = param.split("&|=");
-        Studio studio = new Studio();
-        for (int i = 0; i<strings.length;i+=2) {
-            String str = strings[i];
-            if (str.equals("id")){
-                studio.setId(strings[i+1]);
-            }
-            if(str.equals("name")){
-                studio.setName(strings[i+1]);
-            }
-            if(str.equals("synopsis")){
-                studio.setSynopsis(strings[i+1]);
-            }
-            if (str.equals("introduce")){
-                studio.setIntroduce(strings[i+1]);
-            }
-            if (str.equals("image")){
-                studio.setImage(strings[i+1]);
-            }
-            if (str.equals("logo")){
-                studio.setLogo(strings[i+1]);
-            }
-            if (str.equals("founddate")){
-                studio.setFounddate(strings[i+1]);
-            }
-        }
+    public Tip update(Studio studio) {
         iStudioService.update(studio);
-        return new JsonResult(studio);
+        return super.SUCCESS_TIP;
     }
 
     /**
@@ -177,15 +158,14 @@ public class StudioController extends BaseController {
     @ResponseBody
     public String upload(@RequestPart("file") MultipartFile picture){
         String pictureName = UUID.randomUUID().toString() + ".jpg";
-        String fileSavePath = gunsProperties.getFileUploadPath();
-        String location = "studio\\\\";
+        String fileSavePath = gunsProperties.getFileUploadPath() + "studio/";
         try {
-            picture.transferTo(new File(fileSavePath +location+ pictureName));
+            picture.transferTo(new File(fileSavePath + pictureName));
         } catch (Exception e) {
-            File file = new File(fileSavePath +location);
+            File file = new File(fileSavePath );
             file.mkdirs();
             try {
-                picture.transferTo(new File(fileSavePath +location+ pictureName));
+                picture.transferTo(new File(fileSavePath + pictureName));
             } catch (IOException e1) {
                 throw new BussinessException(BizExceptionEnum.UPLOAD_ERROR);
             }
@@ -198,9 +178,9 @@ public class StudioController extends BaseController {
      * @author stylefeng
      * @Date 2017/5/24 23:00
      */
-    @RequestMapping("/{pictureId}")
+    @RequestMapping("/image/{pictureId}")
     public void renderPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"studio\\\\"+ pictureId + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"studio/"+ pictureId + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);

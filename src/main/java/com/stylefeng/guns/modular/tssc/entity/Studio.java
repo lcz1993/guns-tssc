@@ -7,13 +7,17 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- *
+ *工作室类
+ * @author lcz
  */
 public class Studio extends Model<Studio> {
 
     private static final long serialVersionUID = 1L;
     /**
      * 对应数据库的字段
+     */
+    /**
+     * 唯一主键
      */
     private String id;              //唯一主键
     private String name;            //名称

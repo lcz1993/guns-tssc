@@ -20,13 +20,6 @@
     <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
     <!-- <link href="${ctxPath}/static/css/plugins/ztree/demo.css" rel="stylesheet"> -->
 
-    <!--富文本编辑器开始-->
-    <script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>
-    <script src="${ctxPath}/static/CFEditor/js/config.js"></script>
-    <script src="${ctxPath}/static/ckfinder/ckfinder.js"></script>
-    <!--富文本编辑器结束-->
-
-
     <!-- 全局js -->
     <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
     <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
@@ -67,28 +60,73 @@
                 <input type="hidden" id="id" value="">
 
                 <div class="row">
-                        <#input id="name" name="名称" underline="false"/>
-                        <#input id="founddate" name="成立时间" underline="false" type="date"
-                        clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
-                    <!--<div class="col-sm-12">-->
-                        <!--<#richtext id="synopsis" name="synopsis" placeholder="请输入工作室简介" label="简介"/>-->
-                        <!--<br>-->
-                        <!--<#richtext id="introduce" name="introduce" placeholder="请输入工作室介绍" label="详细介绍"/>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 b-r">-->
-                        <!--<#imageUp id="logo" name="logo" underline="true" avatarImg=""/>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6">-->
-                        <!--<#imageUp id="image" name="照片" underline="true" avatarImg=""/>-->
-                    <!--</div>-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">名称</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">成立时间</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="founddate" name="founddate"onclick="laydate({istime: false, format: 'YYYY-MM-DD'})">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">简介</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="synopsis" name="synopsis"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">详细介绍</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="introduce" name="introduce"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label head-scu-label">LOGO</label>
+                        <div class="col-sm-4">
+                            <span id="logoPreId"></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="logoBtnId"><div class="webuploader-pick"></div>
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="logo" value="logo">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label head-scu-label">图片</label>
+                        <div class="col-sm-4">
+                            <span id="imagePreId"></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="imageBtnId"><div class="webuploader-pick"></div>
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="image" value="image">
+                    </div>
                 </div>
 
                 <div class="row btn-group-m-t">
                     <div class="col-sm-10">
-                        <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="StudioInfoDlg.addSubmit()"/>
-                        <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="StudioInfoDlg.close()"/>
+                        <button type="button" class="btn btn-primary " id="ensure" onclick="StudioInfoDlg.addSubmit()">
+                            <i class="fa fa-check"></i>&nbsp;提交
+                        </button>
+                        <button type="button" class="btn btn-danger " onclick="StudioInfoDlg.close()" id="cancel">
+                            <i class="fa fa-eraser"></i>&nbsp;取消
+                        </button>
                     </div>
                 </div>
+
             </div>
 
         </div>

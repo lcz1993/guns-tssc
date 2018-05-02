@@ -7,6 +7,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 团队阵容
+ */
 public class Personnel  extends Model<Personnel> {
     private static final long serialVersionUID = 1L;
 

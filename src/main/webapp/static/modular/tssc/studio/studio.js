@@ -45,29 +45,26 @@ Studio.openAddStudio = function () {
     var index = layer.open({
         type: 2,
         title: '添加工作室',
-        area: ['50%', '50%'], //宽高
+        area: ['100%', '100%'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/studio/studio_add'
     });
     this.layerIndex = index;
 };
-
 /**
  * 打开查看工作室详情
  */
-Studio.openStudioDetail = function () {
-    if (this.check()) {
-        var index = layer.open({
-            type: 2,
-            title: '工作室详情',
-            area: ['800px', '420px'], //宽高
-            fix: false, //不固定
-            maxmin: true,
-            content: Feng.ctxPath + '/studio/studio_update/' + Studio.seItem.id
-        });
-        this.layerIndex = index;
-    }
+Studio.openStudioDetail = function (id) {
+    var index = layer.open({
+        type: 2,
+        title: '工作室详情',
+        area: ['100%', '100%'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/studio/studio_update/' + id
+    });
+    this.layerIndex = index;
 };
 
 /**

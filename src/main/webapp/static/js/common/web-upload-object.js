@@ -63,8 +63,8 @@
 		bindEvent : function(bindedObj) {
 			var me =  this;
 			bindedObj.on('fileQueued', function(file) {
-				var $li = $('<div><img></div>');
-				var $img = $li.find('img');
+				var $li = $('<div><span></span></div>');
+				var $img = $li.find('span');
 
 				$("#" + me.uploadPreId).html($li);
 
@@ -74,8 +74,9 @@
 						$img.replaceWith('<span>不能预览</span>');
 						return;
 					}
-					$img.attr('src', src);
-					$img.attr('style', 'height:'+me.height+'px;margin:auto;margin-bottom:0;margin-left:0;');
+                    $img.replaceWith('<span>'+file.source.name+'</span>');
+					// $img.attr('src', src);
+					// $img.attr('style', 'height:'+me.height+'px;margin:auto;margin-bottom:0;margin-left:0;');
 				}, me.picWidth, me.picHeight);
 			});
 
