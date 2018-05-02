@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="743c1940-e991-4743-b1e4-d9dad81f8a46" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/UserMgrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/UserMgrController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/PersonnelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/PersonnelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Studio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Studio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IPersonnelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IPersonnelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/PersonnelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/PersonnelServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/personnel/personnel_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/common/web-upload-object.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/common/web-upload-object.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/personnel/personnel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/personnel/personnel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/personnel/personnel_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/personnel/personnel_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/studio/studio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/studio/studio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/studio/studio_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/studio/studio_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/personnel/personnel_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common/web-upload-object.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/common/web-upload-object.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/personnel/personnel.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/personnel/personnel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/personnel/personnel_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/personnel/personnel_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/studio/studio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/studio/studio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/studio/studio_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/studio/studio_info.js" afterDir="false" />
-    </list>
+    <list default="true" id="743c1940-e991-4743-b1e4-d9dad81f8a46" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -800,7 +764,7 @@
       <workItem from="1525061133876" duration="406000" />
       <workItem from="1525068475255" duration="11811000" />
       <workItem from="1525099137573" duration="13811000" />
-      <workItem from="1525182619433" duration="1415000" />
+      <workItem from="1525182619433" duration="1526000" />
     </task>
     <servers />
   </component>
@@ -822,7 +786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420401000" />
+    <option name="totallyTimeSpent" value="420512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
