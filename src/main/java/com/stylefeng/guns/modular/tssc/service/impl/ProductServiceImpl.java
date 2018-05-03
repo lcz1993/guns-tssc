@@ -35,4 +35,29 @@ public class ProductServiceImpl implements IProductService {
     public Product get(Product product) {
         return productDao.selectById(product.getId());
     }
+
+    @Override
+    public Product get(String id) {
+        return productDao.selectById(id);
+    }
+
+    @Override
+    public int update(Product product) {
+        return productDao.updateById(product);
+    }
+
+    @Override
+    public int delete(Product product) {
+        return productDao.deleteById(product.getId());
+    }
+
+    @Override
+    public int delete(String id) {
+        return productDao.deleteById(id);
+    }
+
+    @Override
+    public void inert(Product product) {
+        productDao.insert(product);
+    }
 }

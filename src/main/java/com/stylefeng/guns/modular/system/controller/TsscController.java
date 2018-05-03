@@ -28,7 +28,7 @@ import java.util.List;
  * @Date 2018年3月26日 10：50
  */
 @Controller
-@RequestMapping(value={"/","/tssc"})
+@RequestMapping(value="/tssc")
 public class TsscController extends BaseController {
 
     @Resource
@@ -53,7 +53,7 @@ public class TsscController extends BaseController {
     private GunsProperties gunsProperties;
 
     //初始化界面
-    @RequestMapping(value="/")
+    @RequestMapping(value="")
     public String tssc(){
         return "/tssc/index.html";
     }
@@ -73,7 +73,7 @@ public class TsscController extends BaseController {
         List<Personnel> personnelList = iPersonnelService.findList(personnel);
         for (Personnel p:personnelList) {
             List<String> list = new ArrayList<String>();
-            String[] strings = p.getPosition().split(";");
+            String[] strings = p.getPosition().split(",");
             for (String s:strings) {
                 list.add(s);
             }
@@ -97,7 +97,12 @@ public class TsscController extends BaseController {
     public String careerList(){
         return "/tssc/career-list.html";
     }
-    //关于我们
+
+    /**
+     * 服务洽谈
+     * @param model
+     * @return
+     */
     @RequestMapping(value="/contact")
     public String contact(Model model){
         model.addAttribute("genres",iGenreService.findList(new Genre()));
@@ -155,7 +160,12 @@ public class TsscController extends BaseController {
             }
             p.setGenres(genres);
 
-            p.setStudio(iStudioService.get(p.getTeamId()));
+            Studio studio = iStudioService.get(p.getTeamId());
+            if(studio == null){
+                studio = new Studio();
+                studio.setLogo("");
+            }
+            p.setStudio(studio);
 
             List<String> strings = new ArrayList<String>();
             String[] images = p.getImage().split(";");
@@ -191,7 +201,7 @@ public class TsscController extends BaseController {
      */
     @RequestMapping("/studio/{pictureId}")
     public void renderStudioPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"studio\\\\"+ pictureId + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"studio/"+ pictureId + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);
@@ -212,7 +222,7 @@ public class TsscController extends BaseController {
      */
     @RequestMapping("/product/{pictureId}")
     public void renderProductPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"product\\\\"+ pictureId + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"product/"+ pictureId + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);
@@ -233,7 +243,7 @@ public class TsscController extends BaseController {
      */
     @RequestMapping("/personnel/{pictureId}")
     public void renderPersonnelPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"personnel\\\\"+ pictureId + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"personnel/"+ pictureId + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);

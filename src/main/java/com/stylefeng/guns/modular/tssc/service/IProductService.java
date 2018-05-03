@@ -13,4 +13,9 @@ import java.util.List;
 public interface IProductService {
     List<Product> findList(Product product);
     Product get(Product product);
+    Product get(String id);
+    int update(Product product);
+    int delete(Product product);
+    int delete(String id);
+    void inert(Product product);
 }

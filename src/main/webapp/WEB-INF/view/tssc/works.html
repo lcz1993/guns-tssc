@@ -146,7 +146,7 @@
                                                 <div class="heading ff-loud">
                                                     <h4 class="title">${product.name}</h4>
                                                 </div>
-                                                <img class="pic" src="${ctxPath}/tssc/product/{product.boundary}">
+                                                <img class="pic" src="${ctxPath}/tssc/product/${product.boundary}">
                                             </a>
                                         </li>
                                         @}
@@ -187,7 +187,7 @@
                             </div>
                             <div class="footer">
                                 <p class="meta clr-red" id="product_team">团队： <a class="term" href="${ctxPath}/tssc/about#/about-group"><span></span>
-                                    </a><img class="companylogo" id="studio_logo" src="${ctxPath}/tssc/studio/{product.studio.logo}" alt="" /> </p>
+                                    </a><img class="companylogo" id="studio_logo" src="${ctxPath}/tssc/studio/${product.studio.logo}" alt="" /> </p>
                             </div>
                             <a class="btn-close back" href="${ctxPath}/tssc/works#article" title="回前页"><i class="icn icn-close"></i></a>
                         </div>
@@ -284,19 +284,20 @@
                 var li = "";
                 var div = "";
                 for(var i = 0; i < image.length ; i++){
+                    var src = "${ctxPath}/tssc/product/"+image[i];
                     if(i == 0){
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
                         div += '<div class="item  active">';
-                        // div += '<img src="${ctxPath}/tssc/product/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';
                     }else{
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
                         div += '<div class="item">';
-                        // div += '<img src="${ctxPath}/tssc/product/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';

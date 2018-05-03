@@ -1,9 +1,12 @@
 package com.stylefeng.guns.modular.tssc.entity;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author lcz
@@ -22,7 +25,7 @@ public class News extends Model<News>{
     /**
      *时间
      */
-    private Date time;
+    private String time;
     /**
      *简介
      */
@@ -36,7 +39,18 @@ public class News extends Model<News>{
      */
     private String image;
 
+    @TableField(exist = false)
+    private List<String> images = new ArrayList<String>();
+
     public News() {
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> list) {
+        this.images = list;
     }
 
     public String getId() {
@@ -55,11 +69,11 @@ public class News extends Model<News>{
         this.name = name;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

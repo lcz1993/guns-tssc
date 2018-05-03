@@ -50,34 +50,30 @@ Product.openAddProduct = function () {
 /**
  * 打开查看产品详情
  */
-Product.openProductDetail = function () {
-    if (this.check()) {
-        var index = layer.open({
-            type: 2,
-            title: '产品详情',
-            area: ['800px', '420px'], //宽高
-            fix: false, //不固定
-            maxmin: true,
-            content: Feng.ctxPath + '/product/product_update/' + Product.seItem.id
-        });
-        this.layerIndex = index;
-    }
+Product.openProductDetail = function (id) {
+    var index = layer.open({
+        type: 2,
+        title: '产品详情',
+        area: ['100%', '100%'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/product/product_update/' + id
+    });
+    this.layerIndex = index;
 };
 
 /**
  * 删除产品
  */
-Product.delete = function () {
-    if (this.check()) {
-        var ajax = new $ax(Feng.ctxPath + "/product/delete", function (data) {
-            Feng.success("删除成功!");
-            Product.table.refresh();
-        }, function (data) {
-            Feng.error("删除失败!" + data.responseJSON.message + "!");
-        });
-        ajax.set("productId",this.seItem.id);
-        ajax.start();
-    }
+Product.delete = function (id) {
+    var ajax = new $ax(Feng.ctxPath + "/product/delete", function (data) {
+        Feng.success("删除成功!");
+        window.location.reload();
+    }, function (data) {
+        Feng.error("删除失败!" + data.responseJSON.message + "!");
+    });
+    ajax.set("productId",id);
+    ajax.start();
 };
 
 /**

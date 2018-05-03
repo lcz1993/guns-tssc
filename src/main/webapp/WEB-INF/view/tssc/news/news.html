@@ -89,7 +89,7 @@
                             <div class="content-inner">
                                 <ul class="newslist">
                                     @for(news in newsList){
-                                    <li class="item" onclick="goLeft(${news.id})">
+                                    <li class="item" onclick="goLeft('${news.id}')">
                                         <input id="id" value="${news.id}" type="hidden">
                                         <a data-articleid="116" href="media-detailed.html?Serno=116">
                                             <div class="heading ff-loud">
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn-close back" href="${ctxPath}/news" title="回前頁"><i class="icn icn-close"></i></a>
+                            <a class="btn-close back" href="${ctxPath}/news" title="回前页"><i class="icn icn-close"></i></a>
                         </div>
                         <div class="row-side">
                             <div class="content" data-autosize="" data-scrollpane="" style="overflow: hidden; padding: 0px; width: 1920px;">
@@ -156,7 +156,7 @@
                                         <div class="content-mask">
                                             <div class="content-outer" style="min-height: 828px;">
 
-                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 60%;height: 60%;margin: auto;margin-top: 100px;">
+                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 45%;height: 60%;margin-top: 100px;">
                                                     <!-- Indicators -->
                                                     <ol class="carousel-indicators" id="img_ol">
 
@@ -202,7 +202,6 @@
 
 <script>
     function goLeft(id) {
-        console.log(id);
         $.ajax({
             url:"${ctxPath}/news/detail",
             type:"post",
@@ -222,25 +221,26 @@
                 $("#news_name").text(name);
                 $("#news_content").html(content);
                 $("#news_section").attr("style","display: block; opacity: 1; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);");
-                $("#news_edit").attr("onclick","openNewsDetail("+id+")");
-                $("#news_delete").attr("onclick","deleteNews("+id+")");
+                $("#news_edit").attr("onclick","News.openNewsDetail('"+id+"')");
+                $("#news_delete").attr("onclick","News.delete('"+id+"')");
 
                 var li = "";
                 var div = "";
                 for(var i = 0; i < image.length ; i++){
+                    var src = "${ctxPath}/news/"+image[i];
                     if(i == 0){
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
                         div += '<div class="item  active">';
-                        // div += '<img src="${ctxPath}/news/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';
                     }else{
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
                         div += '<div class="item">';
-                        // div += '<img src="${ctxPath}/news/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';

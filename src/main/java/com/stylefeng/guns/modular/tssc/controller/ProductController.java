@@ -1,5 +1,6 @@
 package com.stylefeng.guns.modular.tssc.controller;
 
+import com.stylefeng.guns.common.constant.tips.ErrorTip;
 import com.stylefeng.guns.common.constant.tips.Tip;
 import com.stylefeng.guns.common.controller.BaseController;
 import com.stylefeng.guns.common.exception.BizExceptionEnum;
@@ -21,6 +22,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
@@ -119,7 +121,29 @@ public class ProductController extends BaseController {
      * 跳转到修改产品
      */
     @RequestMapping("/product_update/{productId}")
-    public String productUpdate(@PathVariable Integer productId, Model model) {
+    public String productUpdate(@PathVariable String productId, Model model) {
+        Product product = iProductService.get(productId);
+        List<Genre> genreList = new ArrayList<Genre>();
+        String[] genres = product.getGenreId().split(",");
+        for(String genreId : genres){
+            Genre genre = iGenreService.get(genreId);
+            genreList.add(genre);
+        }
+        String[] imageArr = product.getImage().split(",");
+        List<String> images = new ArrayList<String>();
+        for (String image: imageArr) {
+            images.add(image);
+        }
+        while (images.size() < 3){
+            images.add("");
+        }
+        product.setImages(images);
+        product.setGenres(genreList);
+        model.addAttribute("product",product);
+        List<Genre> genre_list = iGenreService.findList(new Genre());
+        model.addAttribute("genreList",genre_list);
+        List<Studio> studios = iStudioService.findList(new Studio());
+        model.addAttribute("studios",studios);
         return PREFIX + "product_edit.html";
     }
 
@@ -137,9 +161,16 @@ public class ProductController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    public Tip add(@Valid Product product, BindingResult result) {
-
-
+    public Tip add(@Valid Product product, BindingResult result, HttpServletRequest request) {
+        String introduct = product.getIntroduce();
+        if(!ToolUtil.isEmpty(introduct)){
+            introduct = ToolUtil.getEncodeHtml(introduct);
+            product.setIntroduce(introduct);
+        }
+        if(ToolUtil.isEmpty(product.getId())){
+            product.setId(ToolUtil.getUid());
+        }
+        iProductService.inert(product);
         return super.SUCCESS_TIP;
     }
 
@@ -148,7 +179,8 @@ public class ProductController extends BaseController {
      */
     @RequestMapping(value = "/delete")
     @ResponseBody
-    public Object delete() {
+    public Object delete(String id) {
+        iProductService.delete(id);
         return SUCCESS_TIP;
     }
 
@@ -158,7 +190,16 @@ public class ProductController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public Object update() {
+    public Tip update(@Valid Product product, BindingResult result) {
+        String introduct = product.getIntroduce();
+        if(!ToolUtil.isEmpty(introduct)){
+            introduct = ToolUtil.getEncodeHtml(introduct);
+            product.setIntroduce(introduct);
+        }
+        if(ToolUtil.isEmpty(product.getId())){
+            return new ErrorTip(404,"id不能为空！");
+        }
+        iProductService.update(product);
         return super.SUCCESS_TIP;
     }
 
@@ -190,15 +231,14 @@ public class ProductController extends BaseController {
     @ResponseBody
     public String upload(@RequestPart("file") MultipartFile picture){
         String pictureName = UUID.randomUUID().toString() + ".jpg";
-        String fileSavePath = gunsProperties.getFileUploadPath();
-        String location = "product\\\\";
+        String fileSavePath = gunsProperties.getFileUploadPath() + "product/";
         try {
-            picture.transferTo(new File(fileSavePath +location+ pictureName));
+            picture.transferTo(new File(fileSavePath + pictureName));
         } catch (Exception e) {
-            File file = new File(fileSavePath +location);
+            File file = new File(fileSavePath );
             file.mkdirs();
             try {
-                picture.transferTo(new File(fileSavePath +location+ pictureName));
+                picture.transferTo(new File(fileSavePath + pictureName));
             } catch (IOException e1) {
                 throw new BussinessException(BizExceptionEnum.UPLOAD_ERROR);
             }
@@ -213,7 +253,7 @@ public class ProductController extends BaseController {
      */
     @RequestMapping("/{pictureId}")
     public void renderPicture(@PathVariable("pictureId") String image, HttpServletResponse response) {
-        String path = gunsProperties.getFileUploadPath() +"product\\\\"+ image + ".jpg";
+        String path = gunsProperties.getFileUploadPath() +"product/"+ image + ".jpg";
         try {
             byte[] bytes = FileUtil.toByteArray(path);
             response.getOutputStream().write(bytes);

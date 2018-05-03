@@ -48,6 +48,11 @@ public class NewsServiceImpl implements INewsService {
     }
 
     @Override
+    public News get(News news) {
+        return newsDao.selectById(news.getId());
+    }
+
+    @Override
     public int delete(News news) {
         return newsDao.deleteById(news.getId());
     }

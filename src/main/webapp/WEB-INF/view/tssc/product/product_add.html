@@ -18,9 +18,8 @@
     <link href="${ctxPath}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
     <link href="${ctxPath}/static/css/plugins/ztree/zTreeStyle.css" rel="stylesheet">
     <link href="${ctxPath}/static/css/plugins/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet"/>
-    <!-- Ueditor编辑器CSS -->
-    <link href="${ctxPath}/static/css/umeditor.min.css" type="text/css" rel="stylesheet">
     <!-- <link href="${ctxPath}/static/css/plugins/ztree/demo.css" rel="stylesheet"> -->
+    <link href="${ctxPath}/static/css/umeditor.min.css" type="text/css" rel="stylesheet">
 
     <!-- 全局js -->
     <script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
@@ -45,89 +44,140 @@
     <script src="${ctxPath}/static/js/common/ztree-object.js"></script>
     <script src="${ctxPath}/static/js/common/Feng.js"></script>
 
+
     <script type="text/javascript">
         Feng.addCtx("${ctxPath}");
         Feng.sessionTimeoutRegistry();
     </script>
 </head>
+
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
-<div class="ibox float-e-margins">
-    <div class="ibox-content">
-        <div class="form-horizontal" id="ProductInfoForm">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="form-horizontal" id="ProductInfoForm">
 
-            <input type="hidden" id="id" value="">
+                <input type="hidden" id="id" value="">
 
-            <div class="row">
-                <div class="col-sm-6 b-r">
-                    <#input id="name" name="作品名称" underline="false"/>
+                <div class="row">
+                    <div class="col-sm-6 b-r">
+                        <#input id="name" name="作品名称" underline="false"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <#input id="year" name="制作时间" underline="false" type="date"
+                        clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
+                    </div>
+                    <div class="col-sm-6 b-r">
+                        <#input id="customer" name="客户名称" underline="false"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-2 control-label">制作团队</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="teamId">
+                                <option value="">请选择制作团队</option>
+                                @for(studio in studios){
+                                <option value="${studio.id}">${studio.name}</option>
+                                @}
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <#input id="year" name="制作时间" underline="false" type="date"
-                    clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
-                </div>
-                <div class="col-sm-6 b-r">
-                    <#input id="customer" name="客户名称" underline="false"/>
-                </div>
-                <div class="col-sm-6">
-                    <label class="col-sm-2 control-label">制作团队</label>
-                    <div class="col-sm-9">
-                        <select class="form-control" id="teamId">
-                            <option value="请选择制作团队"></option>
-                            @for(studio in studios){
-                            <option value="${studio.id}">${studio.name}</option>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">所属类别</label>
+                        <div class="col-sm-10">
+                            @for(genre in genres){
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="${genre.id}" name="genreId" value="${genre.id}">${genre.name}
+                            </label>
                             @}
-                        </select>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <label class="col-sm-1 control-label">所属类别</label>
-                    <div>
-                        @for(genre in genres){
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="${genre.id}" value="${genre.name}">${genre.name}
-                        </label>
-                        @}
+
+                    <!--封面图片和内容图片-->
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label head-scu-label">封面</label>
+                        <div class="col-sm-4">
+                            <span id="boundaryPreId"></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="boundaryBtnId">
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="boundary" value="">
                     </div>
-                </div>
-                <!--封面图片和内容图片-->
 
-                <!--封面图片和内容图片-->
+                    <!--封面图片和内容图片-->
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label head-scu-label">作品图片</label>
 
-                <div>
-                    <label class="col-sm-2 control-label">产品介绍</label>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <!--输入框-->
-                                <script type="text/plain" id="introduce" style="width:100%;height:200px;"></script>
-                                <!--输入框-->
+                        <div class="col-sm-2">
+                            <span id="image1PreId"></span>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="image1BtnId">
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="image1" value="image1">
+
+                        <div class="col-sm-2">
+                            <span id="image2PreId"></span>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="image2BtnId">
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="image2" value="image2">
+
+                        <div class="col-sm-2">
+                            <span id="image3PreId"></span>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="head-scu-btn upload-btn webuploader-container" id="image3BtnId">
+                                <i class="fa fa-upload"></i>&nbsp;上传
+                            </div>
+                        </div>
+                        <input type="hidden" id="image3" value="image3">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">产品介绍</label>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!--输入框-->
+                                    <script type="text/plain" id="introduce" style="width:100%;height:200px;"></script>
+                                    <!--输入框-->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row btn-group-m-t">
-                <div class="col-sm-10">
-                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ProductInfoDlg.addSubmit()"/>
-                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ProductInfoDlg.close()"/>
+                <div class="row btn-group-m-t">
+                    <div class="col-sm-10">
+                        <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ProductInfoDlg.addSubmit()"/>
+                        <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ProductInfoDlg.close()"/>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
-<script src="${ctxPath}/static/modular/tssc/product/product_info.js"></script>
-<!-- Ueditor编辑器JS -->
-<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.min.js"></script>
-<script type="text/javascript" src="${ctxPath}/static/js/ue/lang/zh-cn.js"></script>
-<script type="text/javascript">
-    //实例化Ueditor编辑器
-    var um = UM.getEditor('introduce');
-</script>
+    <script src="${ctxPath}/static/modular/tssc/product/product_info.js"></script>
+    <!-- Ueditor编辑器JS -->
+    <script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/js/ue/lang/zh-cn.js"></script>
+    <script type="text/javascript">
+        //实例化Ueditor编辑器
+        var um = UM.getEditor('introduce');
+    </script>
 </div>
 <script src="${ctxPath}/static/js/content.js?v=1.0.0"></script>
 </body>
 </html>
+

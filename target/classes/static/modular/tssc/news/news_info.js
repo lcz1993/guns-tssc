@@ -44,7 +44,11 @@ NewsInfoDlg.close = function() {
  * 收集数据
  */
 NewsInfoDlg.collectData = function() {
-    this.set('id');
+    var body = um.getContent();
+    this.newsInfoData.content = body;
+    var image = $("#image1").val() +","+ $("#image2").val() +","+ $("#image3").val();
+    this.newsInfoData.image = image;
+    this.set('id').set("name").set("time").set("synopsis");
 }
 
 /**
@@ -58,7 +62,7 @@ NewsInfoDlg.addSubmit = function() {
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/news/add", function(data){
         Feng.success("添加成功!");
-        window.parent.News.table.refresh();
+        window.parent.location.reload();
         NewsInfoDlg.close();
     },function(data){
         Feng.error("添加失败!" + data.responseJSON.message + "!");
@@ -78,7 +82,7 @@ NewsInfoDlg.editSubmit = function() {
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/news/update", function(data){
         Feng.success("修改成功!");
-        window.parent.News.table.refresh();
+        window.parent.location.reload();
         NewsInfoDlg.close();
     },function(data){
         Feng.error("修改失败!" + data.responseJSON.message + "!");
@@ -88,5 +92,13 @@ NewsInfoDlg.editSubmit = function() {
 }
 
 $(function() {
+    // 初始化图片上传
+    var url = '/news/upload'
 
+    var image1 = new $WebUpload("image1",url,true);
+    image1.init();
+    var image2 = new $WebUpload("image2",url,true);
+    image2.init();
+    var image3 = new $WebUpload("image3",url,true);
+    image3.init();
 });

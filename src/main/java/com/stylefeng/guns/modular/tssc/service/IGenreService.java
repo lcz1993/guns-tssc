@@ -13,7 +13,8 @@ import java.util.List;
 public interface IGenreService {
     List<Genre> findList(Genre genre);
     Genre get(Genre genre);
+    Genre get(String id);
     void insert(Genre genre);
-    void delete(Genre genre);
-    void update(Genre genre);
+    int delete(Genre genre);
+    int update(Genre genre);
 }

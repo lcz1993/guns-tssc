@@ -115,7 +115,7 @@ public class ShiroConfig {
         /**
          * 默认的登陆访问url
          */
-        shiroFilter.setLoginUrl("/tssc/");
+        shiroFilter.setLoginUrl("/tssc");
         /**
          * 登陆成功后跳转的url
          */
@@ -123,7 +123,7 @@ public class ShiroConfig {
         /**
          * 没有权限跳转的url
          */
-        shiroFilter.setUnauthorizedUrl("/tssc/");
+        shiroFilter.setUnauthorizedUrl("/tssc");
         /**
          * 配置shiro拦截器链
          *

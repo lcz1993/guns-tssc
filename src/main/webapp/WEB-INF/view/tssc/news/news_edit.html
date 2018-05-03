@@ -6,12 +6,60 @@
             <input type="hidden" id="id" value="${news.id}">
 
             <div class="row">
-                <div class="col-sm-6 b-r">
+                <#input id="name" name="名称" underline="false" value="${news.name}"/>
+                <#input id="time" name="发布时间" underline="false" type="date" value="${news.time}"
+                clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
 
+                <!--封面图片和内容图片-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label head-scu-label">作品图片</label>
+                    <div class="col-sm-2">
+                        <span id="image1PreId">${news.images[0]}</span>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="image1BtnId">
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="image1" value="${news.images[0]}">
+                    <div class="col-sm-2">
+                        <span id="image2PreId">${news.images[1]}</span>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="image2BtnId">
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="image2" value="${news.images[1]}">
+                    <div class="col-sm-2">
+                        <span id="image3PreId">${news.images[2]}</span>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="head-scu-btn upload-btn webuploader-container" id="image3BtnId">
+                            <i class="fa fa-upload"></i>&nbsp;上传
+                        </div>
+                    </div>
+                    <input type="hidden" id="image3" value="${news.images[2]}">
                 </div>
 
-                <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">详细介绍</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="synopsis" name="synopsis">${news.synopsis}</textarea>
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">新闻图片</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!--输入框-->
+                                <script type="text/plain" id="content" style="width:100%;height:200px;"></script>
+                                <!--输入框-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -26,4 +74,15 @@
     </div>
 </div>
 <script src="${ctxPath}/static/modular/tssc/news/news_info.js"></script>
+<!-- Ueditor编辑器JS -->
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/static/js/ue/umeditor.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/ue/lang/zh-cn.js"></script>
+<script type="text/javascript">
+//实例化Ueditor编辑器
+    var um = UM.getEditor('content');
+    $(function () {
+        $("#content").html('${news.content}');
+    });
+</script>
 @}

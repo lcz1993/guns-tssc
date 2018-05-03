@@ -35,17 +35,22 @@ public class GenreServiceImpl implements IGenreService {
     }
 
     @Override
+    public Genre get(String id) {
+        return genreDao.selectById(id);
+    }
+
+    @Override
     public void insert(Genre genre) {
         genreDao.insert(genre);
     }
 
     @Override
-    public void delete(Genre genre) {
-        genreDao.deleteById(genre.getId());
+    public int delete(Genre genre) {
+        return genreDao.deleteById(genre.getId());
     }
 
     @Override
-    public void update(Genre genre) {
-        genreDao.updateById(genre);
+    public int update(Genre genre) {
+        return genreDao.updateById(genre);
     }
 }

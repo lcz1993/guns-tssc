@@ -76,21 +76,19 @@
 
         <div data-articleurl="works-detailed.html?Serno={id}" data-listurl="works.html?year=2017&amp;tag=all&amp;company=all" data-startpath="#/article"></div>
 
-
-
         <div id="works" data-section="article" class="section">
             <section data-mainpage="list" class="mainpage">
                 <div id="ajaxlist" class="page-body article-list">
                     <div class="row-main">
                         <form method="post" action="./works.html" id="worksform">
                             <div class="aspNetHidden">
-                                <input type="hidden" name="actionStamp" id="actionStamp" value="2018%2f4%2f8+%e4%b8%8a%e5%8d%88+11%3a32%3a37">
-                                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE3NzQwMzQ1MzYPZBYCAgIPZBYGAgEPEA8WBh4NRGF0YVRleHRGaWVsZAUJY2FzZV90eXBlHg5EYXRhVmFsdWVGaWVsZAUFU2Vybm8eC18hRGF0YUJvdW5kZ2QQFQsS5omA5pyJ5qGI5L6L6aGe5YilD+WTgeeJjOWSjOWJteaEjwzlhaflrrnooYzpircG5YWs6ZecDOaVuOaTmuWIhuaekAznpL7nvqTooYzpircP5raI6LK76ICF5LqS5YuVBua0u+WLlRLmlbjkvY3lqpLpq5TooYzpircY5raI6LK76ICF5Y+K6Zu25ZSu5o6o5bujDOaVuOS9jeihjOmKtxULAAExATIBMwE0ATUBNgE3ATgBOQIxMBQrAwtnZ2dnZ2dnZ2dnZ2RkAgMPEA8WBh8ABQR0ZXh0HwEFBmFubnVhbB8CZ2QQFQUM5omA5pyJ5bm05Lu9BDIwMTYEMjAxNQQyMDE0BDIwMTMVBQAEMjAxNgQyMDE1BDIwMTQEMjAxMxQrAwVnZ2dnZ2RkAgUPEA8WBh8ABQdjb21wYW55HwEFBVNlcm5vHwJnZBAVCAzmiYDmnInlnJjpmooe5aWn576O5pW05ZCI6KGM6Yq35YKz5pKt6ZuG5ZyYDOWlp+e+juW7o+WRihLlpafnvo7kupLli5XooYzpircS5aWn576O5YWs5YWx6Zec5L+CEuS4lue0gOWlp+e+juWFrOmXnBLmiJHmmK/lpKfooZvlu6PlkYoM57SF5Z2K5Ym15oSPFQgAAjEyATEBMgE1ATYCMTABORQrAwhnZ2dnZ2dnZ2RkZCahRd+HDMUn9g30ddk88WOUH85zlKbGnviZFaSK+3W1">
+                                <input type="hidden" name="actionStamp" id="actionStamp" value="">
+                                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="">
                             </div>
 
                             <div class="aspNetHidden">
                                 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EBE9D16C">
-                                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABnP0ZA8kT1MH+JE3U8iZstZIMJPpxkAztS7ODIRAs4RiMIL08P8rnTsbg9wB0UGhkN1peFUelj+EhrU53T13i+uUTFmuj7ZtnEZtUzMl0psxa3QCp3xjWjCEw7kCb5ctkAxDfrHEq2By5vDZsRdGE/EEnjBazX5ua7onRkg7rfz1xSXh1loUSt63eXpOPyIh7KyJ4NjKRRgcYcqH6T7j6TsDuJvFbU2+o3zA0KNYC6u8dgMK1S7YUB8Pud9WnHKcj7oXDEtci8mednFEKQQYva+b0u/QkGuYIFlLayujxQuRoo7FuDy7NXB14avq/b2v7d2hTpZ2fAU/QNc8vV2rGQYBxmjLK/GwK+7fSfOvqbtXzRZekZwyFhi39Gs9YhnXxqk5/PuLoRJrRTOMjGqYebVsy9iDeg+kFJyfrPzV61rZH5kNDEpBsGC2FwIRR5u+azQWtxL0rZ75hXX/dMTJY07mUGmS9d75Ld7n7xTRWPBg67A8r6MPOMqxAzeL6Wch4lOC649XM09xReQvlpg0GQpLuvFueWHkWJ8kDtVo63ZElT2rXSoTJ4i+J5nKtP/zUo=">
+                                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="">
                             </div>
                             <div class="header">
                                 <h1 class="maintitle">作品<#button name="添加" icon="fa-plus" clickFun="Product.openAddProduct()"/></h1>
@@ -137,7 +135,7 @@
                                                     <div class="heading ff-loud">
                                                         <h4 class="title">${product.name}</h4>
                                                     </div>
-                                                    <img class="pic" src="${ctxPath}/product/"+{product.boundary}>
+                                                    <img class="pic" src="${ctxPath}/product/${product.boundary}">
                                                 </a>
                                             </li>
                                         @}
@@ -158,8 +156,12 @@
 
                     <div class="page-body article-detail">
                         <div class="row-main" style="height: 40px;">
-                            <#button name="编辑" icon="fa-plus" clickFun="Product.openProductDetail()" space="true"/>
-                            <#button name="删除" icon="fa-plus" clickFun="Product.delete(event)" space="true"/>
+                            <button type="button" class="btn btn-primary button-margin" id="edit" >
+                                <i class="fa fa-plus"></i>&nbsp;编辑
+                            </button>
+                            <button type="button" class="btn btn-primary button-margin" id="delete">
+                                <i class="fa fa-plus"></i>&nbsp;删除
+                            </button>
                         </div>
                         <div class="row-main">
                             <div class="header">
@@ -181,7 +183,7 @@
                             </div>
                             <div class="footer">
                                 <p class="meta clr-red" id="product_team">团队： <span></span><a class="term" href="${ctxPath}/studio?">
-                                    <img class="companylogo" id="studio_logo" src="${ctxPath}/studio/{product.studio.logo}" alt="" /></a> </p>
+                                    <img class="companylogo" id="studio_logo" alt="" /></a> </p>
                             </div>
                             <a class="btn-close back" href="${ctxPath}/product" title="回前页"><i class="icn icn-close"></i></a>
                         </div>
@@ -190,9 +192,9 @@
                                 <div class="jspContainer" style="width: 1920px; height: 877px;">
                                     <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 1920px;">
                                         <div class="content-mask">
-                                            <div class="content-outer" style="min-height: 877px;">
+                                            <div class="content-outer" style="min-height: 877px;text-align: left;">
 
-                                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 60%;height: 60%;margin: auto;margin-top: 100px;">
+                                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 45%;height: 60%;margin-top: 100px;">
                                                         <!-- Indicators -->
                                                         <ol class="carousel-indicators" id="img_ol">
 
@@ -245,7 +247,6 @@
     function goLeft(event) {
         var a = $(event.target).parent().parent();
         var id = a.attr("data-articleid");
-        console.log(a);
         $.ajax({
             url:"${ctxPath}/product/detail",
             type:"post",
@@ -263,34 +264,36 @@
                 var introduce = result.introduce;
                 var studio = result.studio;
                 var images = result.image;
-                var image = images.split(";");
-
-                console.log(customer+name+genreName+introduce+studio+images);
+                var image = images.split(",");
 
                 $("#section_product").attr("data-subpage",id);
                 $("#customer").text(customer);
                 $("#product_name").text(name);
                 $("#studio_name").text(genreName);
                 $("#product_introduce").html(introduce);
-                $("#studio_logo").attr("src",studio.logo);
                 $("#works").attr("style","display: block; opacity: 1; transform: translate(-100%, 0%) matrix(1, 0, 0, 1, 0, 0);");
+                $("#edit").attr("onclick","Product.openProductDetail('"+id+"')");
+                $("#delete").attr("onclick","Product.delete('"+id+"')");
+                $("#product_team span").text(studio.name);
+                $("#studio_logo").attr("src","${ctxPath}/studio/"+studio.logo);
 
                 var li = "";
                 var div = "";
                 for(var i = 0; i < image.length ; i++){
+                    var src = "${ctxPath}/product/"+image[i];
                     if(i == 0){
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'" class="active"></li>';
                         div += '<div class="item  active">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="100%" height="100%" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';
                     }else{
                         li += '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>';
                         div += '<div class="item">';
-                        // div += '<img src="${ctxPath}/product/"'+image[i]+' width="608px" height="308px" alt="...">';
-                        div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
+                        div += '<img src="'+src+'" width="608px" height="308px" alt="...">';
+                        // div += '<img src="${ctxPath}/static/reception/img/misc/ad-profile.jpg" width="608px" height="308px" alt="...">';
                         div += '<div class="carousel-caption">';
                         div += '</div>';
                         div += '</div>';

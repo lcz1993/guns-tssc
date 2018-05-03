@@ -39,7 +39,7 @@ News.openAddNews = function () {
     var index = layer.open({
         type: 2,
         title: '添加新闻',
-        area: ['800px', '420px'], //宽高
+        area: ['100%', '100%'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/news/news_add'
@@ -50,14 +50,14 @@ News.openAddNews = function () {
 /**
  * 打开查看新闻详情
  */
-News.openNewsDetail = function () {
+News.openNewsDetail = function (id) {
     var index = layer.open({
         type: 2,
         title: '新闻详情',
-        area: ['800px', '420px'], //宽高
+        area: ['100%', '100%'], //宽高
         fix: false, //不固定
         maxmin: true,
-        content: Feng.ctxPath + '/news/news_update/' + News.seItem.id
+        content: Feng.ctxPath + '/news/news_update/' + id
     });
     this.layerIndex = index;
 };
@@ -65,17 +65,15 @@ News.openNewsDetail = function () {
 /**
  * 删除新闻
  */
-News.delete = function () {
-    if (this.check()) {
+News.delete = function (id) {
         var ajax = new $ax(Feng.ctxPath + "/news/delete", function (data) {
             Feng.success("删除成功!");
-            News.table.refresh();
+            window.location.reload();
         }, function (data) {
             Feng.error("删除失败!" + data.responseJSON.message + "!");
         });
-        ajax.set("newsId",this.seItem.id);
+        ajax.set("newsId",id);
         ajax.start();
-    }
 };
 
 /**
