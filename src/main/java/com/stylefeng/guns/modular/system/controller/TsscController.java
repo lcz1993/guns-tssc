@@ -132,7 +132,15 @@ public class TsscController extends BaseController {
     public String viewpoints(){
         return "/tssc/viewpoints.html";
     }
-    //关于我们
+
+    /**
+     * 产品
+     * @param model
+     * @param genreId
+     * @param year
+     * @param studioId
+     * @return
+     */
     @RequestMapping(value="/works")
     public String works(Model model,String genreId,String year,String studioId) {
         List<Genre> genres = iGenreService.findList(new Genre());

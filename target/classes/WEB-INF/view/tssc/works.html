@@ -187,7 +187,7 @@
                             </div>
                             <div class="footer">
                                 <p class="meta clr-red" id="product_team">团队： <a class="term" href="${ctxPath}/tssc/about#/about-group"><span></span>
-                                    </a><img class="companylogo" id="studio_logo" src="${ctxPath}/tssc/studio/${product.studio.logo}" alt="" /> </p>
+                                    </a><img class="companylogo" id="studio_logo" alt="" /> </p>
                             </div>
                             <a class="btn-close back" href="${ctxPath}/tssc/works#article" title="回前页"><i class="icn icn-close"></i></a>
                         </div>
@@ -196,9 +196,9 @@
                                 <div class="jspContainer" style="width: 1920px; height: 877px;">
                                     <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 1920px;">
                                         <div class="content-mask">
-                                            <div class="content-outer" style="min-height: 877px;">
+                                            <div class="content-outer" style="min-height: 877px;text-align: left;">
 
-                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 60%;height: 60%;margin: auto;margin-top: 100px;">
+                                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 55%;height: 80%;margin-top: 200px;">
                                                     <!-- Indicators -->
                                                     <ol class="carousel-indicators" id="img_ol">
 
@@ -271,7 +271,7 @@
                 var introduce = result.introduce;
                 var studio = result.studio;
                 var images = result.image;
-                var image = images.split(";");
+                var image = images.split(",");
 
                 $("#section_product").attr("data-subpage",id);
                 $("#customer").text(customer);

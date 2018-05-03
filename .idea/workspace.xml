@@ -2,58 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="743c1940-e991-4743-b1e4-d9dad81f8a46" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/InitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/guns.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/guns.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/config/web/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/config/web/ShiroConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IGenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IGenreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/INewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/INewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/GenreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/GenreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/NewsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/common/_container.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/common/_container.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/studio/studio_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/news/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/news/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/news/news_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/news/news_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/product/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/product/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/product/product_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/modular/tssc/product/product_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/reception/css/indexom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/reception/css/indexom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/common/_container.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/common/_container.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/system/user/user_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/system/user/user_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/news/news_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/product/product_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/tssc/studio/studio_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/news/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/news/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/news/news_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/news/news_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/product/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/product/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/modular/tssc/product/product_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/modular/tssc/product/product_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/reception/css/indexom.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/reception/css/indexom.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,32 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="news_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="32" />
-              <folding>
-                <element signature="n#style#0;n#script#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="indexom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/reception/css/indexom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="22395">
               <caret line="1493" column="19" selection-start-line="1493" selection-start-column="19" selection-end-line="1493" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TsscController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TsscController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+            <state relative-caret-position="212">
+              <caret line="191" column="25" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+              <folding>
+                <element signature="e#2396#2404#0" expanded="true" />
+                <element signature="e#4998#5005#0" expanded="true" />
+                <element signature="e#5561#5569#0" expanded="true" />
+                <element signature="e#5826#5841#0" expanded="true" />
+                <element signature="e#6335#6336#0" expanded="true" />
+                <element signature="e#6385#6386#0" expanded="true" />
+                <element signature="e#8822#8829#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,7 +54,7 @@
       <file leaf-file-name="media.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/media.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="3990">
               <caret line="266" selection-start-line="266" selection-end-line="266" />
             </state>
           </provider>
@@ -116,25 +63,54 @@
       <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
+            <state relative-caret-position="3195">
               <caret line="213" column="117" selection-start-line="213" selection-start-column="117" selection-end-line="213" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="works.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="works.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="300" selection-start-line="300" selection-end-line="300" />
+            <state relative-caret-position="177">
+              <caret line="200" column="156" selection-start-line="200" selection-start-column="156" selection-end-line="200" selection-end-column="156" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="196" column="181" selection-start-line="190" selection-start-column="28" selection-end-line="196" selection-end-column="181" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="career.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/career.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-555" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="810">
               <caret line="60" column="29" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="29" />
             </state>
           </provider>
@@ -143,20 +119,8 @@
       <file leaf-file-name="StudioController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1716">
+            <state relative-caret-position="180">
               <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/news/news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2325">
-              <caret line="155" column="66" selection-start-line="155" selection-start-column="66" selection-end-line="155" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -164,7 +128,7 @@
       <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/NewsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="825">
               <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
             </state>
           </provider>
@@ -288,8 +252,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/reception/css/indexom.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/about.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/media.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html" />
       </list>
     </option>
   </component>
@@ -763,8 +727,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -776,7 +740,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="prod&#9;PSI&#9;JAVA://com.stylefeng.guns.modular.tssc.entity.Product&#10;studioc&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java&#10;news&#9;PSI&#9;JAVA://com.stylefeng.guns.modular.tssc.entity.News&#10;indexcss&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/static/reception/css/indexom.css&#10;user&#9;PSI&#9;JAVA://com.stylefeng.guns.common.persistence.model.User&#10;ERR&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/common/constant/tips/ErrorTip.java&#10;Error&#9;PSI&#9;JAVA://com.stylefeng.guns.common.constant.tips.ErrorTip&#10;product&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java&#10;product_info&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/static/modular/tssc/product/product_info.js&#10;user_view&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/WEB-INF/view/system/user/user_view.html&#10;pro&#9;PSI&#9;JAVA://com.stylefeng.guns.modular.tssc.entity.Product&#10;per&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java&#10;personnel&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java&#10;company&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Company.java&#10;Tool&#9;PSI&#9;JAVA://com.stylefeng.guns.core.util.ToolUtil&#10;studio&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Studio.java" />
+    <property name="SearchEverywhereHistoryKey" value="prod&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/WEB-INF/view/tssc/product/product.html&#10;studioc&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java&#10;news&#9;PSI&#9;JAVA://com.stylefeng.guns.modular.tssc.entity.News&#10;indexcss&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/static/reception/css/indexom.css&#10;user&#9;PSI&#9;JAVA://com.stylefeng.guns.common.persistence.model.User&#10;ERR&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/common/constant/tips/ErrorTip.java&#10;Error&#9;PSI&#9;JAVA://com.stylefeng.guns.common.constant.tips.ErrorTip&#10;product&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java&#10;product_info&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/static/modular/tssc/product/product_info.js&#10;user_view&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/webapp/WEB-INF/view/system/user/user_view.html&#10;pro&#9;PSI&#9;JAVA://com.stylefeng.guns.modular.tssc.entity.Product&#10;per&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java&#10;personnel&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Personnel.java&#10;company&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Company.java&#10;Tool&#9;PSI&#9;JAVA://com.stylefeng.guns.core.util.ToolUtil&#10;studio&#9;FILE&#9;file:///Users/a1/IdeaProjects/guns-tssc/src/main/java/com/stylefeng/guns/modular/tssc/entity/Studio.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -971,6 +935,7 @@
       <workItem from="1525252607579" duration="5472000" />
       <workItem from="1525271795753" duration="2200000" />
       <workItem from="1525275728375" duration="2008000" />
+      <workItem from="1525315956091" duration="1169000" />
     </task>
     <servers />
   </component>
@@ -992,7 +957,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446548000" />
+    <option name="totallyTimeSpent" value="447717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
@@ -1008,7 +973,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43618512" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43618512" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32819074" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -1019,8 +984,8 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32819074" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49751243" visible="true" weight="0.22174536" />
       <window_info anchor="bottom" id="Problems" order="8" weight="0.32900432" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49751243" weight="0.22460657" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32995737" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -1132,7 +1097,7 @@
           <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="96" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1140,11 +1105,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/_fstyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -1388,19 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="196" column="159" selection-start-line="196" selection-start-column="159" selection-end-line="196" selection-end-column="159" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,9 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1450,57 +1394,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="825">
           <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/reception/css/indexom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="22395">
           <caret line="1493" column="19" selection-start-line="1493" selection-start-column="19" selection-end-line="1493" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/controller/StudioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1716">
+        <state relative-caret-position="180">
           <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
+        <state relative-caret-position="3195">
           <caret line="213" column="117" selection-start-line="213" selection-start-column="117" selection-end-line="213" selection-end-column="117" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/media.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="3990">
           <caret line="266" selection-start-line="266" selection-end-line="266" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/tssc/entity/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="810">
           <caret line="60" column="29" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/career.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="191" column="25" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+          <folding>
+            <element signature="e#2396#2404#0" expanded="true" />
+            <element signature="e#4998#5005#0" expanded="true" />
+            <element signature="e#5561#5569#0" expanded="true" />
+            <element signature="e#5826#5841#0" expanded="true" />
+            <element signature="e#6335#6336#0" expanded="true" />
+            <element signature="e#6385#6386#0" expanded="true" />
+            <element signature="e#8822#8829#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/product/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="196" column="181" selection-start-line="190" selection-start-column="28" selection-end-line="196" selection-end-column="181" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/tssc/works.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="300" selection-start-line="300" selection-end-line="300" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stylefeng/guns/modular/system/controller/TsscController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+        <state relative-caret-position="177">
+          <caret line="200" column="156" selection-start-line="200" selection-start-column="156" selection-end-line="200" selection-end-column="156" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#section#1;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
